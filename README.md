@@ -148,7 +148,7 @@
 
 | Що | Навіщо | Варіанти |
 |---|---|---|
-| **Windows 10/11 (64-біт) або macOS** | сама студія | — |
+| **Windows 10/11 (64-біт) або macOS 13 Ventura+** | сама студія | — |
 | **Telegram** | вхід і доступ | акаунт + участь у каналі й чаті YT Cartell (див. [«Доступ»](#-доступ)) |
 | **Текстова модель** | план, сценарій, промти | CarteLink або будь-який OpenAI-сумісний ендпоінт (`…/v1/chat/completions`), чи Google Gemini |
 | **Кадри й відео** | розкадровка й кліпи | **[G-Labs Studio](#-g-labs-studio)** з увімкненим Webhook API (Nano Banana, Veo 3.1, Omni Flash), **Google** (ключі AI Studio: Gemini / Veo) або своє API |

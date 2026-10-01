@@ -12,7 +12,7 @@
 https://brew.sh та формули Homebrew. Паролі вводжу я сам — не вводь і не виводь їх.
 Нічого не видаляй, крім старої копії самої програми.
 
-1. Перевір систему: `sw_vers` (потрібна macOS 12 або новіша) і `uname -m`
+1. Перевір систему: `sw_vers` (потрібна macOS 13 Ventura або новіша) і `uname -m`
    (arm64 = Apple Silicon, x86_64 = Intel).
 2. Дізнайся останню версію:
    `curl -fsSL https://api.github.com/repos/gitkalenyuk/yt-cartell-studio/releases/latest`
