@@ -210,6 +210,55 @@
     window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { if (!expanded) renderStyles(false); }, 150); });
   }
 
+  /* ---------------- copy the Mac install prompt ---------------- */
+  $$(".copy-btn").forEach(function (btn) {
+    var label = $(".copy-label", btn);
+    var idle = label ? label.textContent : "";
+    var card = btn.closest(".prompt-card");
+    var status = card ? $(".copy-status", card) : null;
+    var timer;
+    function done(ok, msg) {
+      clearTimeout(timer);
+      btn.classList.toggle("is-done", ok);
+      if (label) label.textContent = ok ? "Скопійовано" : idle;
+      if (status) status.textContent = msg || "";
+      timer = setTimeout(function () {
+        btn.classList.remove("is-done");
+        if (label) label.textContent = idle;
+        if (status) status.textContent = "";
+      }, ok ? 2600 : 6000);
+    }
+    function legacyCopy(text) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.top = "-1000px"; ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      btn.focus();
+      return ok;
+    }
+    function selectText(el) {
+      var r = document.createRange(); r.selectNodeContents(el);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    }
+    btn.addEventListener("click", function () {
+      var src = $(btn.getAttribute("data-copy"));
+      if (!src) return;
+      var text = src.textContent;
+      var fallback = function () {
+        if (legacyCopy(text)) done(true, "Інструкцію скопійовано — встав її в агента.");
+        else { selectText(src); done(false, "Текст виділено — натисни ⌘C або Ctrl+C."); }
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { done(true, "Інструкцію скопійовано — встав її в агента."); }, fallback);
+      } else fallback();
+    });
+  });
+
   /* ---------------- tutorial video ---------------- */
   (function () {
     var card = $("#video-card");

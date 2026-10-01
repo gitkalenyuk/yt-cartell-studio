@@ -69,6 +69,10 @@
   <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
   <symbol id="i-folder" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></symbol>
   <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6"/><path d="M12 19h8"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
   <symbol id="w-min" viewBox="0 0 10 10"><path d="M0 5h10"/></symbol>
   <symbol id="w-max" viewBox="0 0 10 10"><rect x=".5" y=".5" width="9" height="9" rx="1.5"/></symbol>
   <symbol id="w-close" viewBox="0 0 10 10"><path d="M0 0l10 10M10 0 0 10"/></symbol>
@@ -458,7 +462,7 @@
         <li><svg class="i" aria-hidden="true"><use href="#i-wifi-off"/></svg>Без інтернету студія працює ще 24 години після останньої перевірки.</li>
       </ul>
     </div>
-    <figure class="cutout fade-b" style="--fade:94%" data-reveal="shot">
+    <figure class="cutout" data-reveal="shot">
       <picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/shots/gate-dark-1084.webp 1084w, assets/img/shots/gate-dark-760.webp 760w" sizes="(min-width: 1440px) 760px, (min-width: 1024px) 56vw, calc(100vw - 32px)"><img src="assets/img/shots/gate-light-760.webp" srcset="assets/img/shots/gate-light-1084.webp 1084w, assets/img/shots/gate-light-760.webp 760w" sizes="(min-width: 1440px) 760px, (min-width: 1024px) 56vw, calc(100vw - 32px)" width="1084" height="646" alt="Вікно «Вхід у студію»: крок 1 — «Увійти через Telegram», крок 2 — підписатися на канал і чат YT Cartell" loading="lazy" decoding="async"></picture>
     </figure>
   </div>
@@ -488,12 +492,12 @@
           </li>
           <li class="dl-row" id="dl-mac-arm" data-os="mac-arm">
             <span class="os" aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span>
-            <span><b>macOS · Apple Silicon<span class="dl-you" hidden>твоя система</span></b><span class="meta">Mac на M1 і новіших · архів .zip</span></span>
+            <span><b>macOS · Apple Silicon<span class="dl-you" hidden>твоя система</span></b><span class="meta">Mac на M1 і новіших · архів .zip</span><a class="row-link" href="#mac-ai">Встановити через ШІ-агента</a></span>
             <a class="btn btn-md btn-secondary" href="https://github.com/gitkalenyuk/yt-cartell-studio/releases"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Завантажити</a>
           </li>
           <li class="dl-row" id="dl-mac-x64" data-os="mac-x64">
             <span class="os" aria-hidden="true"><svg class="i"><use href="#i-laptop"/></svg></span>
-            <span><b>macOS · Intel<span class="dl-you" hidden>твоя система</span></b><span class="meta">Mac з процесором Intel · архів .zip</span></span>
+            <span><b>macOS · Intel<span class="dl-you" hidden>твоя система</span></b><span class="meta">Mac з процесором Intel · архів .zip</span><a class="row-link" href="#mac-ai">Встановити через ШІ-агента</a></span>
             <a class="btn btn-md btn-secondary" href="https://github.com/gitkalenyuk/yt-cartell-studio/releases"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Завантажити</a>
           </li>
         </ul>
@@ -505,7 +509,7 @@
           <h4 class="h4">Перший запуск</h4>
           <p class="well"><b>Windows.</b> Якщо з'явиться «Windows захистив ваш ПК» — натисни «Докладніше» → «Виконати в будь-якому разі». Програма просто не підписана сертифікатом.</p>
           <p class="well"><b>Оновлення.</b> Нова версія — кнопка «Оновлення» в меню студії: вона сама завантажить і встановить її, а проєкти й ключі лишаться на місці.</p>
-          <p class="well"><b>macOS.</b> Розпакуй .zip і перетягни YT Cartell Studio у «Програми». Перший запуск — правий клік → «Відкрити». Немає такої кнопки — «Системні параметри» → «Приватність і безпека» → «Усе одно відкрити».</p>
+          <p class="well"><b>macOS.</b> Розпакуй .zip і перетягни YT Cartell Studio у «Програми». Перший запуск — правий клік → «Відкрити». Немає такої кнопки — «Системні параметри» → «Приватність і безпека» → «Усе одно відкрити». Або доручи все ШІ-агенту — <a href="#mac-ai">інструкція нижче</a>.</p>
         </div>
       </div>
       <div data-reveal style="--rd:1">
@@ -514,13 +518,137 @@
           <li><b>Windows 10/11 (64-біт) або macOS</b><span>Mac з Apple Silicon (M1 і новіші) або з Intel.</span></li>
           <li><b>Telegram</b><span>Акаунт і підписка на канал і чат YT Cartell — <a class="prose-link" href="#access">як отримати доступ</a>.</span></li>
           <li><b>FFmpeg разом із ffprobe</b><span>Для монтажу й перегляду. Windows: <code>winget install Gyan.FFmpeg</code> або поклади ffmpeg.exe і ffprobe.exe поруч із програмою. macOS: <code>brew install ffmpeg</code>.</span></li>
-          <li><b>Твої сервіси генерації</b><span>Текст: CarteLink, будь-який OpenAI-сумісний сервіс або Google Gemini. Кадри й відео: G-Labs Studio, Google (Gemini / Veo) або своє API — OpenAI, fal.ai, Replicate, Runway, Luma, MiniMax. Озвучка: ElevenLabs, Cartesia, OpenAI, Google Cloud, Azure, MiniMax, Fish Audio або свій сервер.</span></li>
+          <li><b>Твої сервіси генерації</b><span>Текст: CarteLink, будь-який OpenAI-сумісний сервіс або Google Gemini. Кадри й відео: <a class="prose-link" href="#g-labs">G-Labs Studio</a>, Google (Gemini / Veo) або своє API — OpenAI, fal.ai, Replicate, Runway, Luma, MiniMax. Озвучка: ElevenLabs, Cartesia, OpenAI, Google Cloud, Azure, MiniMax, Fish Audio або свій сервер.</span></li>
           <li><b>Ключі — лише в тебе</b><span>Студія зберігає їх тільки на твоєму комп'ютері.</span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
+
+<!-- MAC: install through an AI agent -->
+<section class="section" id="mac-ai" aria-labelledby="mac-ai-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <h2 class="h2" id="mac-ai-title" data-reveal>Встановлення на Mac через ШІ-агента</h2>
+      <p class="lead" data-reveal style="--rd:1">Не хочеш розбиратися з Терміналом? Відкрий на Mac ШІ-агента, який уміє виконувати команди, — Claude Code, Codex CLI чи інший, — встав інструкцію й запусти. Далі він усе зробить сам.</p>
+    </div>
+    <div class="macai">
+      <div class="macai-copy" data-reveal>
+        <h3 class="h4">Що зробить агент</h3>
+        <ul class="facts">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Завантажить останній реліз з GitHub — zip саме під твій Mac</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Звірить SHA-256 із SHA256SUMS.txt — підмінений файл не встановиться</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Покладе програму в «Програми» й зніме карантин</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Поставить FFmpeg через Homebrew, а whisper-cpp — якщо скажеш</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Запустить студію й підкаже, що налаштувати далі</li>
+        </ul>
+        <p class="macai-note">Паролі (пароль Mac для Homebrew) вводиш тільки ти. Якщо Mac-версії в релізі ще немає — агент зупиниться й скаже про це.</p>
+
+        <h3 class="h4 macai-manual-title">Або вручну — три кроки</h3>
+        <ol class="ol-steps manual-steps">
+          <li><span class="n" aria-hidden="true">1</span><div><b>Завантаж і перенеси</b><span class="d">Візьми .zip для свого Mac з <a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases/latest" rel="noopener">останнього релізу</a>, розпакуй і перетягни YT Cartell Studio у «Програми».</span></div></li>
+          <li><span class="n" aria-hidden="true">2</span><div><b>Зніми карантин</b><span class="d">У Терміналі:</span><code class="cmd">xattr -dr com.apple.quarantine "/Applications/YT Cartell Studio.app"</code></div></li>
+          <li><span class="n" aria-hidden="true">3</span><div><b>Постав FFmpeg</b><span class="d">Через <a href="https://brew.sh" rel="noopener">Homebrew</a>:</span><code class="cmd">brew install ffmpeg</code></div></li>
+        </ol>
+      </div>
+
+      <div class="prompt-card" data-reveal style="--rd:1">
+        <div class="prompt-head">
+          <span class="box" aria-hidden="true"><svg class="i"><use href="#i-terminal"/></svg></span>
+          <div class="prompt-title">
+            <h3 class="h4">Інструкція для агента</h3>
+            <p>Встав цілком у Claude Code, Codex CLI чи іншого агента</p>
+          </div>
+          <button class="btn btn-md btn-primary copy-btn" type="button" data-copy="#mac-prompt">
+            <svg class="i i-copy" aria-hidden="true"><use href="#i-copy"/></svg><svg class="i i-done" aria-hidden="true"><use href="#i-check"/></svg><span class="copy-label">Скопіювати інструкцію</span>
+          </button>
+        </div>
+        <div class="prompt-well" tabindex="0" role="region" aria-label="Текст інструкції для ШІ-агента">
+          <pre class="prompt" id="mac-prompt">Встанови на цей Mac програму YT Cartell Studio з офіційних релізів GitHub
+(https://github.com/gitkalenyuk/yt-cartell-studio). Працюй крок за кроком і після кожного кроку
+коротко пиши, що зроблено. Використовуй лише офіційні джерела: релізи цього репозиторію,
+https://brew.sh та формули Homebrew. Паролі вводжу я сам — не вводь і не виводь їх.
+Нічого не видаляй, крім старої копії самої програми.
+
+1. Перевір систему: <code><span class="bt">`</span>sw_vers<span class="bt">`</span></code> (потрібна macOS 12 або новіша) і <code><span class="bt">`</span>uname -m<span class="bt">`</span></code>
+   (arm64 = Apple Silicon, x86_64 = Intel).
+2. Дізнайся останню версію:
+   <code><span class="bt">`</span>curl -fsSL https://api.github.com/repos/gitkalenyuk/yt-cartell-studio/releases/latest<span class="bt">`</span></code>
+   Обери файл під мою архітектуру: <code><span class="bt">`</span>YT-Cartell-Studio-&lt;версія&gt;-macos-arm64.zip<span class="bt">`</span></code> (Apple Silicon)
+   або <code><span class="bt">`</span>YT-Cartell-Studio-&lt;версія&gt;-macos-x64.zip<span class="bt">`</span></code> (Intel); якщо його нема, підійде
+   <code><span class="bt">`</span>…-macos-universal.zip<span class="bt">`</span></code>. Якщо жодного zip для macOS у релізі немає — зупинись і скажи мені,
+   що Mac-версія ще не опублікована.
+3. Завантаж обраний zip і <code><span class="bt">`</span>SHA256SUMS.txt<span class="bt">`</span></code> з того ж релізу в <code><span class="bt">`</span>~/Downloads/yt-cartell-studio/<span class="bt">`</span></code>
+   (curl -fL з адрес <code><span class="bt">`</span>browser_download_url<span class="bt">`</span></code>). Перевір контрольну суму: <code><span class="bt">`</span>shasum -a 256 &lt;zip&gt;<span class="bt">`</span></code>
+   має збігтися з рядком цього файлу в <code><span class="bt">`</span>SHA256SUMS.txt<span class="bt">`</span></code>. Якщо не збігається — зупинись і
+   нічого не встановлюй.
+4. Якщо програма вже запущена — закрий її: <code><span class="bt">`</span>osascript -e 'quit app "YT Cartell Studio"'<span class="bt">`</span></code>.
+   Розпакуй: <code><span class="bt">`</span>ditto -x -k &lt;zip&gt; ~/Downloads/yt-cartell-studio/app<span class="bt">`</span></code>. Якщо в /Applications вже є
+   «YT Cartell Studio.app» — перейменуй її на «YT Cartell Studio.old.app», скопіюй нову
+   (<code><span class="bt">`</span>ditto "&lt;…&gt;/YT Cartell Studio.app" "/Applications/YT Cartell Studio.app"<span class="bt">`</span></code>), а після успішного
+   запуску видали стару копію.
+5. Програма не підписана сертифікатом Apple, тому зніми карантин:
+   <code><span class="bt">`</span>xattr -dr com.apple.quarantine "/Applications/YT Cartell Studio.app"<span class="bt">`</span></code>.
+6. Потрібні інструменти:
+   - Homebrew: <code><span class="bt">`</span>command -v brew<span class="bt">`</span></code>; якщо нема — встанови офіційним скриптом з https://brew.sh і
+     виконай рядок <code><span class="bt">`</span>eval "$(… brew shellenv)"<span class="bt">`</span></code>, який він підкаже.
+   - <code><span class="bt">`</span>brew install ffmpeg<span class="bt">`</span></code> — без FFmpeg програма не змонтує відео.
+   - Запитай мене, чи потрібне локальне розпізнавання мови (для «Своєї озвучки» без
+     інтернету); якщо так — <code><span class="bt">`</span>brew install whisper-cpp<span class="bt">`</span></code>.
+7. Запусти: <code><span class="bt">`</span>open -a "YT Cartell Studio"<span class="bt">`</span></code>. Відкриється вікно входу через Telegram — це
+   нормально. Перевір, що в <code><span class="bt">`</span>~/Library/Application Support/YT Cartell Studio/studio.log<span class="bt">`</span></code> немає
+   слова panic.
+8. Прибери завантажені файли з <code><span class="bt">`</span>~/Downloads/yt-cartell-studio/<span class="bt">`</span></code> і напиши мені звіт: встановлена
+   версія, архітектура, що довстановлено (ffmpeg, whisper-cpp), і що робити далі:
+   - увійти в програмі через Telegram і бути підписаним на канал https://t.me/YT_cartell
+     (заявку схвалює адмін) та чат https://t.me/+Jj06Fbj8-8oyZDQ6;
+   - встановити G-Labs Studio (https://duckmartians.info/g-labs/en/) для кадрів і відео,
+     увімкнути в ній Webhook API (Generate → Start Server) і вписати адресу
+     http://127.0.0.1:8765 та ключ у «Налаштування → Кадри й відео» студії;
+   - вписати текстовий сервіс (CarteLink або будь-який OpenAI-сумісний) і ключ озвучки
+     (наприклад ElevenLabs) у «Налаштування → Підключення».</pre>
+        </div>
+        <p class="prompt-foot"><span class="copy-status" aria-live="polite"></span><a class="link" href="https://github.com/gitkalenyuk/yt-cartell-studio/blob/main/INSTALL-MAC-AI.md" rel="noopener">Та сама інструкція на GitHub<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- G-LABS STUDIO -->
+<section class="section section-tight" id="g-labs" aria-labelledby="g-labs-title">
+  <div class="wrap glabs">
+    <div class="glabs-copy">
+      <h2 class="h2" id="g-labs-title" data-reveal>G-Labs Studio: кадри й відео з твого Google Flow</h2>
+      <p class="lead" data-reveal style="--rd:1">Окрема програма для Windows і macOS від duckmartians, безкоштовна для особистого використання. Це не наш продукт&nbsp;— YT Cartell Studio просто підключається до неї.</p>
+      <p class="body-2 glabs-more" data-reveal style="--rd:2">G-Labs Studio автоматизує Google Flow — картинки Nano Banana й відео Veo, а також Grok, Meta AI і ChatGPT GPT Image: кілька акаунтів Google, черги й локальний Webhook API. Студія надсилає туди запити на кадри й кліпи, тож генерація йде на кредитах твого акаунта Google — Free, Pro чи Ultra. Кліпи по 4 і 6 секунд через G-Labs знімаються лише з Ultra.</p>
+      <ul class="ext-links" data-reveal style="--rd:3">
+        <li><a href="https://duckmartians.info/g-labs/en/" rel="noopener">Сайт G-Labs Studio<svg class="i" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li><a href="https://duckmartians.info/g-labs/guide/en/" rel="noopener">Посібник<svg class="i" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li><a href="https://duckmartians.info/g-labs/guide/en/webhook-api/" rel="noopener">Посібник із Webhook API<svg class="i" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li><a href="https://github.com/duckmartians/G-Labs-Studio" rel="noopener">GitHub<svg class="i" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+      </ul>
+      <p class="well glabs-alt" data-reveal style="--rd:4"><b>Без G-Labs теж можна.</b> У студії є й інші шляхи: ключі Google AI Studio (Gemini / Veo) або своє API — OpenAI, fal.ai, Replicate, Runway, Luma, MiniMax.</p>
+    </div>
+    <div class="card glabs-card" data-reveal="shot">
+      <div class="card-head">
+        <span class="box" aria-hidden="true"><svg class="i"><use href="#i-plug"/></svg></span>
+        <div>
+          <h3 class="h3">Як підключити</h3>
+          <p>Чотири кроки, один раз</p>
+        </div>
+      </div>
+      <ol class="ol-steps">
+        <li><span class="n" aria-hidden="true">1</span><div><b>Встанови G-Labs Studio</b><span class="d">З <a href="https://duckmartians.info/g-labs/en/" rel="noopener">офіційного сайту</a> — для Windows або macOS.</span></div></li>
+        <li><span class="n" aria-hidden="true">2</span><div><b>Додай свій акаунт Google</b><span class="d">У розділі «Accounts». Можна кілька.</span></div></li>
+        <li><span class="n" aria-hidden="true">3</span><div><b>Увімкни Webhook API</b><span class="d">«Webhook API» → «Generate» (з'явиться ключ) → «Start Server».</span></div></li>
+        <li><span class="n" aria-hidden="true">4</span><div><b>Підключи YT Cartell Studio</b><span class="d">«Налаштування → Підключення → Кадри й відео»: адреса <code>http://127.0.0.1:8765</code> і ключ → «Перевірити G-Labs».</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 
 <!-- FAQ -->
 <section class="section" id="faq" aria-labelledby="faq-title">
@@ -564,12 +692,16 @@
         <div class="a"><p>Так: «Налаштування → Дані → Вибрати папку й імпортувати». Переносяться ключі, налаштування й проєкти разом із файлами. Це разова копія — дві версії не синхронізуються.</p></div>
       </details>
       <details class="qa">
+        <summary>Що таке G-Labs Studio і чи обов'язкова вона?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+        <div class="a"><p>Окрема програма від duckmartians, через яку студія малює кадри й знімає відео у Google Flow твого акаунта Google. Вона не обов'язкова: можна підключити ключі Google AI Studio або своє API. <a href="#g-labs">Докладніше й як підключити</a>.</p></div>
+      </details>
+      <details class="qa">
         <summary>Як оновлювати студію?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
         <div class="a"><p>Під час запуску студія сама перевіряє, чи вийшла нова версія. Є нова — натисни «Оновлення» в меню ліворуч: студія завантажить її, перевірить і встановить після перезапуску. Перевірити вручну можна там само.</p><p>Проєкти, налаштування й ключі під час оновлення не зачіпаються — вони лежать окремо від програми.</p></div>
       </details>
       <details class="qa">
         <summary>Студія працює на Mac?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-        <div class="a"><p>Так, є збірки для Apple Silicon та Intel. Найбільше студію перевіряли на Windows — якщо на Mac щось поводиться дивно, напиши в <a href="https://t.me/+Jj06Fbj8-8oyZDQ6" rel="noopener">чат спільноти</a>.</p></div>
+        <div class="a"><p>Так, є збірки для Apple Silicon та Intel. Найпростіше встановити через ШІ-агента — <a href="#mac-ai">готова інструкція</a> сама завантажить, перевірить і встановить усе потрібне.</p><p>Найбільше студію перевіряли на Windows — якщо на Mac щось поводиться дивно, напиши в <a href="https://t.me/+Jj06Fbj8-8oyZDQ6" rel="noopener">чат спільноти</a>.</p></div>
       </details>
     </div>
   </div>

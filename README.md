@@ -15,7 +15,7 @@
 [![Дата релізу](https://img.shields.io/github/release-date/gitkalenyuk/yt-cartell-studio?label=%D1%80%D0%B5%D0%BB%D1%96%D0%B7%20%D0%B2%D1%96%D0%B4&color=24201d&style=flat-square)](../../releases/latest)
 ![Мова інтерфейсу](https://img.shields.io/badge/%D0%BC%D0%BE%D0%B2%D0%B0%20%D1%96%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D1%83-%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0-24201d?style=flat-square)
 
-### [⬇️ Завантажити останню версію](../../releases/latest) · [🌐 Сайт](https://gitkalenyuk.github.io/yt-cartell-studio/) · [📣 Канал YT Cartel](https://t.me/YT_cartell)
+### [⬇️ Завантажити останню версію](../../releases/latest) · [🌐 Сайт](https://gitkalenyuk.github.io/yt-cartell-studio/) · [📣 Канал YT Cartell](https://t.me/YT_cartell)
 
 </div>
 
@@ -23,7 +23,7 @@
 
 > [!NOTE]
 > Тут лежать **лише готові білди** для Windows і macOS та опис. Вихідний код закритий.
-> Студія відкривається для учасників спільноти **YT Cartel** — вхід через Telegram (див. [«Доступ»](#-доступ)).
+> Студія відкривається для учасників спільноти **YT Cartell** — вхід через Telegram (див. [«Доступ»](#-доступ)).
 
 ---
 
@@ -34,9 +34,11 @@
 - [Що вміє студія](#-що-вміє-студія)
 - [Скриншоти](#-скриншоти)
 - [Що потрібно](#-що-потрібно)
+- [G-Labs Studio](#-g-labs-studio)
 - [Доступ](#-доступ)
 - [Встановлення на Windows](#-встановлення-на-windows)
 - [Встановлення на macOS](#-встановлення-на-macos)
+  - [Через ШІ-агента](#macos-встановлення-через-ші-агента)
 - [Перший запуск](#-перший-запуск)
 - [Оновлення](#-оновлення)
 - [Де лежать твої дані](#-де-лежать-твої-дані)
@@ -147,9 +149,9 @@
 | Що | Навіщо | Варіанти |
 |---|---|---|
 | **Windows 10/11 (64-біт) або macOS** | сама студія | — |
-| **Telegram** | вхід і доступ | акаунт + участь у каналі й чаті YT Cartel (див. [«Доступ»](#-доступ)) |
+| **Telegram** | вхід і доступ | акаунт + участь у каналі й чаті YT Cartell (див. [«Доступ»](#-доступ)) |
 | **Текстова модель** | план, сценарій, промти | CarteLink або будь-який OpenAI-сумісний ендпоінт (`…/v1/chat/completions`), чи Google Gemini |
-| **Кадри й відео** | розкадровка й кліпи | **G-Labs Studio** з увімкненим Webhook API (Nano Banana, Veo 3.1, Omni Flash), **Google** (ключі AI Studio: Gemini / Veo) або своє API |
+| **Кадри й відео** | розкадровка й кліпи | **[G-Labs Studio](#-g-labs-studio)** з увімкненим Webhook API (Nano Banana, Veo 3.1, Omni Flash), **Google** (ключі AI Studio: Gemini / Veo) або своє API |
 | **Озвучка** | голос оповідача й героїв | ElevenLabs або інший сервіс зі списку вище |
 | **FFmpeg** (з `ffprobe`) | монтаж, мініатюри, відтворення | Windows: `winget install Gyan.FFmpeg`; macOS: `brew install ffmpeg` |
 | **Telegram-бот** *(необов'язково)* | сповіщення | свій бот від @BotFather |
@@ -160,9 +162,33 @@
 
 ---
 
+## 🧩 G-Labs Studio
+
+**G-Labs Studio** — окрема програма для Windows і macOS від **duckmartians**, безкоштовна для особистого використання.
+Це **не наш продукт**: YT Cartell Studio просто підключається до неї.
+
+G-Labs Studio автоматизує Google Flow — картинки **Nano Banana** й відео **Veo** (а також Grok, Meta AI і ChatGPT GPT Image):
+кілька акаунтів Google, черги й локальний **Webhook API**. YT Cartell Studio надсилає туди запити на кадри й кліпи,
+тож генерація йде на кредитах **твого** акаунта Google (Free / Pro / Ultra). Кліпи по 4 і 6 с через G-Labs — лише з **Ultra**.
+
+**Як підключити:**
+
+1. Встанови G-Labs Studio з [офіційного сайту](https://duckmartians.info/g-labs/en/).
+2. Додай свій акаунт Google — розділ **Accounts**.
+3. **Webhook API** → **Generate** (з'явиться ключ) → **Start Server**.
+4. У YT Cartell Studio: **Налаштування → Підключення → Кадри й відео** — адреса `http://127.0.0.1:8765` і ключ → **«Перевірити G-Labs»**.
+
+Посилання: [сайт](https://duckmartians.info/g-labs/en/) · [посібник](https://duckmartians.info/g-labs/guide/en/) ·
+[посібник із Webhook API](https://duckmartians.info/g-labs/guide/en/webhook-api/) · [GitHub](https://github.com/duckmartians/G-Labs-Studio)
+
+> [!TIP]
+> Без G-Labs теж можна: у студії є ключі **Google AI Studio** (Gemini / Veo) або **своє API** — OpenAI, fal.ai, Replicate, Runway, Luma, MiniMax.
+
+---
+
 ## 🔐 Доступ
 
-Студія — для учасників спільноти **YT Cartel**. Щоб вона відкрилась, потрібні дві речі:
+Студія — для учасників спільноти **YT Cartell**. Щоб вона відкрилась, потрібні дві речі:
 
 1. **Канал** — [t.me/YT_cartell](https://t.me/YT_cartell). Подай заявку на вступ — адмін схвалить.
 2. **Чат** — [приєднатися за посиланням](https://t.me/+Jj06Fbj8-8oyZDQ6).
@@ -199,6 +225,23 @@
 4. **FFmpeg:** встанови [Homebrew](https://brew.sh), потім `brew install ffmpeg`.
 5. *(необов'язково)* Локальне розпізнавання мови: `brew install whisper-cpp` — на Mac воно прискорюється відеоядром.
 
+### macOS: встановлення через ШІ-агента
+
+Не хочеш розбиратися з Терміналом? Відкрий на Mac ШІ-агента, який уміє виконувати команди (**Claude Code**,
+**Codex CLI** тощо), встав інструкцію з **[INSTALL-MAC-AI.md](INSTALL-MAC-AI.md)** і запусти. Агент сам завантажить
+останній реліз, звірить SHA-256, покладе програму в «Програми», зніме карантин, поставить FFmpeg через Homebrew
+(і whisper-cpp, якщо скажеш) та запустить студію. Паролі вводиш тільки ти.
+
+Коротка версія — агент сам прочитає повну інструкцію:
+
+```text
+Встанови на цей Mac YT Cartell Studio за інструкцією з
+https://raw.githubusercontent.com/gitkalenyuk/yt-cartell-studio/main/INSTALL-MAC-AI.md
+(виконай блок text звідти крок за кроком; паролі вводжу я сам).
+```
+
+Повна інструкція з кнопкою «Скопіювати» є й [на сайті](https://gitkalenyuk.github.io/yt-cartell-studio/#mac-ai).
+
 ---
 
 ## 🚀 Перший запуск
@@ -207,7 +250,7 @@
 2. Студія покаже короткий тур: головна → історія → профілі → «Автопілот» → «Черга». Пропустити й повторити можна будь-коли.
 3. **Налаштування → Підключення** — заповни сервіси й натисни **«Перевірити»** в кожній картці:
    - **Текст і сценарій** — адреса (напр. `http://127.0.0.1:8317/v1` для CarteLink), ключ, модель;
-   - **Кадри й відео** — G-Labs (у G-Labs Studio: *Webhook API → Generate → Start Server*, скопіюй ключ), Google або «Своє API»;
+   - **Кадри й відео** — G-Labs (у G-Labs Studio: *Webhook API → Generate → Start Server*, скопіюй ключ; див. [G-Labs Studio](#-g-labs-studio)), Google або «Своє API»;
    - **Озвучка** — сервіс, один чи кілька ключів, голос оповідача (кожен можна прослухати);
    - **FFmpeg** — «Перевірити».
 4. На **Головній** встав історію, вибери профіль — і тисни **«Автопілот»** або **«Покроково»**.
@@ -251,6 +294,6 @@
 **[⬇️ Завантажити](../../releases/latest)** · **[🌐 Сайт](https://gitkalenyuk.github.io/yt-cartell-studio/)** · **[📣 Telegram](https://t.me/YT_cartell)**
 
 <sub>Вихідний код закритий. Цей репозиторій містить лише скомпільовані білди та опис.<br>
-© YT Cartel</sub>
+© YT Cartell</sub>
 
 </div>

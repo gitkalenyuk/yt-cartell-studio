@@ -586,3 +586,71 @@ code, .kbd { font-family: inherit; font-weight: 500; background: var(--surface);
 }
 #styles-all:hover .btn-arrow { transform: translateY(2px); }
 #styles-all.is-open .btn-arrow, #styles-all.is-open:hover .btn-arrow { transform: rotate(180deg); }
+
+/* ---------- download rows: secondary link */
+.row-link { display: inline-block; margin-top: 4px; font-size: .8125rem; font-weight: 500; color: var(--action-text); text-decoration: none; }
+.row-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.well a { color: var(--action-text); text-underline-offset: 3px; }
+
+/* ---------- Mac: install through an AI agent */
+.macai { display: grid; gap: 40px; align-items: start; }
+@media (min-width: 1024px) { .macai { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; } }
+.macai-copy .facts { margin-top: 14px; }
+.macai-note { margin-top: 18px; color: var(--text-2); font-size: .9375rem; line-height: 1.5; max-width: 52ch; }
+.macai-manual-title { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
+.manual-steps { margin-top: 18px; }
+.manual-steps a { color: var(--action-text); text-underline-offset: 3px; }
+.ol-steps .cmd, .cmd {
+  display: block; margin-top: 8px; padding: 10px 12px; border-radius: var(--r-control);
+  background: var(--surface); color: var(--text); font-weight: 500; font-size: .875rem; line-height: 1.45;
+  white-space: normal; overflow-wrap: anywhere; user-select: all;
+}
+.prompt-card { background: var(--card); border-radius: var(--r-card); box-shadow: var(--sh-card); outline: 1px solid color-mix(in srgb, var(--border) 75%, transparent); outline-offset: -1px; padding: 22px; min-width: 0; }
+.prompt-head { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 14px; align-items: center; }
+.prompt-head .box { width: 48px; height: 48px; border-radius: var(--r-control); background: var(--surface); display: grid; place-items: center; }
+.prompt-head .box .i { width: 24px; height: 24px; }
+.prompt-title p { color: var(--text-2); font-size: .9375rem; line-height: 1.4; margin-top: 2px; }
+@media (max-width: 640px) {
+  .prompt-head { grid-template-columns: 44px minmax(0, 1fr); }
+  .prompt-head .box { width: 44px; height: 44px; }
+  .prompt-head .copy-btn { grid-column: 1 / -1; width: 100%; }
+  .prompt-card { padding: 16px; }
+}
+.copy-btn .i-done { display: none; }
+.copy-btn.is-done { background: var(--success-soft, #DDF3E6); color: var(--success-ink, #187B43); }
+.copy-btn.is-done .i-copy { display: none; }
+.copy-btn.is-done .i-done { display: block; }
+:root[data-theme="dark"] .copy-btn.is-done { background: #1E3A2A; color: #5FD394; }
+.prompt-well {
+  margin-top: 18px; border-radius: var(--r-inner); background: var(--surface);
+  max-height: 560px; overflow: auto; overscroll-behavior: contain;
+  scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent;
+}
+.prompt-well:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.prompt {
+  margin: 0; padding: 18px 20px; font-family: inherit; font-size: .875rem; line-height: 1.62; color: var(--text);
+  white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 2; font-variant-numeric: tabular-nums;
+}
+.prompt code { font-family: inherit; font-weight: 500; background: var(--surface-hover); border-radius: 5px; padding: .05em .3em; white-space: inherit; overflow-wrap: anywhere; }
+.prompt .bt { color: var(--text-3); }
+.prompt-foot { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; font-size: .9375rem; }
+.copy-status { color: var(--text-2); min-height: 1.4em; }
+
+/* ---------- G-Labs Studio */
+.glabs { display: grid; gap: 40px; align-items: start; }
+@media (min-width: 1024px) { .glabs { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 64px; } }
+.glabs-copy { max-width: 620px; }
+.glabs-copy .lead { margin-top: 20px; }
+.glabs-more { margin-top: 16px; }
+.ext-links { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+.ext-links a {
+  display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px;
+  border-radius: 999px; background: var(--card); border: 1px solid var(--border);
+  color: var(--text); font-size: .9375rem; font-weight: 500; text-decoration: none;
+  transition: background-color .12s, border-color .12s;
+}
+.ext-links a:hover { background: var(--surface); border-color: var(--border-strong); }
+.ext-links .i { width: 16px; height: 16px; color: var(--text-2); }
+.glabs-alt { margin-top: 24px; }
+.glabs-card .ol-steps { margin-top: 22px; }
+.glabs-card code, .ol-steps code { font-family: inherit; font-weight: 500; background: var(--surface); border-radius: 6px; padding: .05em .4em; white-space: nowrap; color: var(--text); }
