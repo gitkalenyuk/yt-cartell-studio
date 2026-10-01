@@ -302,9 +302,13 @@
     if (a) {
       heroDl.href = a.url;
       heroMeta.textContent = "Версія " + rel.version + " · " + mb(a.size) + " · " + SYS[os];
+    } else if (rel) {
+      heroLabel.textContent = "Усі файли версії " + rel.version;
+      heroDl.href = rel.url;
+      heroMeta.textContent = SYS[os] + " — збірка ще готується";
     } else {
-      heroDl.href = rel && rel.url ? rel.url : RELEASES_URL;
-      heroMeta.textContent = SYS[os] + (rel ? " · версія " + rel.version : "");
+      heroDl.href = RELEASES_URL;
+      heroMeta.textContent = SYS[os];
     }
   }
 
@@ -318,6 +322,8 @@
       var row = $('.dl-row[data-os="' + key + '"]');
       if (!row) return;
       var a = rel && rel.assets[key], btn = $(".btn", row), meta = $(".meta", row);
+      var txt = btn.lastChild;
+      if (txt && txt.nodeType === 3 && rel) txt.nodeValue = a ? "Завантажити" : "Сторінка релізу";
       if (a) {
         btn.href = a.url;
         btn.setAttribute("download", "");
@@ -326,7 +332,7 @@
       } else if (rel) {
         btn.href = rel.url;
         btn.removeAttribute("download");
-        meta.textContent = "У версії " + rel.version + " цього файлу ще немає — дивись усі версії";
+        meta.textContent = "Збірка ще готується — з'явиться на сторінці релізу " + rel.version;
       }
     });
     if (rel) {
@@ -361,7 +367,8 @@
   }
   function sumDownloads(list) {
     var n = 0;
-    (list || []).forEach(function (r) { (r.assets || []).forEach(function (a) { n += a.download_count || 0; }); });
+    // only the programs themselves count, not checksum files
+    (list || []).forEach(function (r) { (r.assets || []).forEach(function (a) { if (/\.(exe|zip|dmg|pkg|msi)$/i.test(a.name)) n += a.download_count || 0; }); });
     return n;
   }
   function getJSON(url) {
