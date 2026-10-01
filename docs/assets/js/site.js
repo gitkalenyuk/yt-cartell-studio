@@ -219,6 +219,10 @@
     v.preload = "metadata";
     v.playsInline = true;
     v.setAttribute("aria-label", "Відеоурок YT Cartell Studio");
+    var tr = document.createElement("track");
+    tr.kind = "subtitles"; tr.srclang = "uk"; tr.label = "Українська";
+    tr.src = "media/tutorial.uk.vtt";
+    v.appendChild(tr);
     v.addEventListener("loadedmetadata", function () {
       // the poster is optional: without it the first screenshot of the app stands in
       var probe = new Image();
