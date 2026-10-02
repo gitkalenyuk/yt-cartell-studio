@@ -188,7 +188,7 @@
       moreBtn.hidden = !(filter === "all" && (expanded || shown > limit));
       moreBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
       var label = moreBtn.firstChild;
-      if (label && label.nodeType === 3) label.nodeValue = expanded ? "Згорнути" : "Показати всі " + total + " стилів";
+      if (label && label.nodeType === 3) label.nodeValue = expanded ? "Згорнути" : "Показати всі " + total + " " + plural(total, "стиль", "стилі", "стилів");
       moreBtn.classList.toggle("is-open", expanded);
     }
   }
@@ -286,6 +286,63 @@
     v.src = "media/tutorial.mp4";
     v.load();
   })();
+
+  /* ---------------- release promo (2.0.1) ----------------
+     The slot stays hidden until media/promo-2.0.1.mp4 is published next to this page;
+     media/promo-2.0.1-poster.jpg is its optional poster. */
+  (function () {
+    var slot = $("#promo");
+    var card = $("#promo-card");
+    if (!slot || !card) return;
+    var src = slot.getAttribute("data-src");
+    if (!src) return;
+    var v = document.createElement("video");
+    v.controls = true;
+    v.preload = "metadata";
+    v.playsInline = true;
+    v.setAttribute("aria-label", slot.getAttribute("data-label") || "Промо-ролик");
+    v.addEventListener("loadedmetadata", function () {
+      var poster = slot.getAttribute("data-poster");
+      if (poster) {
+        var probe = new Image();
+        probe.onload = function () { v.poster = probe.src; };
+        probe.src = poster;
+      }
+      card.classList.add("has-video");
+      card.appendChild(v);
+      slot.hidden = false;
+      $$("[data-reveal]", slot).forEach(function (el) { el.classList.add("is-in"); });
+    }, { once: true });
+    v.src = src;
+    v.load();
+  })();
+
+  /* ---------------- guide pages: the section in view ---------------- */
+  (function () {
+    var links = $$(".g-toc a[href^='#']");
+    if (!links.length || !("IntersectionObserver" in window)) return;
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+    var heads = $$(".g-article h2[id]").filter(function (h) { return byId[h.id]; });
+    var current = null;
+    function mark(id) {
+      if (id === current) return;
+      current = id;
+      links.forEach(function (a) { a.classList.toggle("is-current", a === byId[id]); });
+    }
+    function update() {
+      var best = heads.length ? heads[0].id : null;
+      heads.forEach(function (h) { if (h.getBoundingClientRect().top < window.innerHeight * 0.4) best = h.id; });
+      if (best) mark(best);
+    }
+    var tio = new IntersectionObserver(update, { rootMargin: "0px 0px -55% 0px", threshold: [0, 1] });
+    heads.forEach(function (h) { tio.observe(h); });
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  })();
+
+  // Only the landing page has the download block: the release lookup below is for it.
+  if (!$("#dl-version")) return;
 
   /* ---------------- OS detection ---------------- */
   var ua = navigator.userAgent || "";
