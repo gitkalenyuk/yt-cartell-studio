@@ -301,6 +301,10 @@
     v.preload = "metadata";
     v.playsInline = true;
     v.setAttribute("aria-label", slot.getAttribute("data-label") || "Промо-ролик");
+    var tr = document.createElement("track");
+    tr.kind = "subtitles"; tr.srclang = "uk"; tr.label = "Українська";
+    tr.src = src.replace(/\.mp4$/, ".uk.vtt");
+    v.appendChild(tr);
     v.addEventListener("loadedmetadata", function () {
       var poster = slot.getAttribute("data-poster");
       if (poster) {
