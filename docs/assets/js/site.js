@@ -5,7 +5,7 @@
   var REPO = "gitkalenyuk/yt-cartell-studio";
   var RELEASES_URL = "https://github.com/" + REPO + "/releases";
   var API = "https://api.github.com/repos/" + REPO;
-  var CACHE_KEY = "ytcs-releases-v1";
+  var CACHE_KEY = "ytcs-releases-v2";
   var CACHE_TTL = 10 * 60 * 1000;
   var THEME_KEY = "ytcs-theme";
 
@@ -259,66 +259,34 @@
     });
   });
 
-  /* ---------------- tutorial video ---------------- */
+  /* ---------------- videos ----------------
+     Every <article class="vid"> inside #videos is one video with its own <video> markup
+     (poster + optional subtitles track). An entry marked data-probe stays hidden until its
+     file is published in docs/media/; the first visible entry becomes the large one. */
   (function () {
-    var card = $("#video-card");
-    if (!card) return;
-    var v = document.createElement("video");
-    v.controls = true;
-    v.preload = "metadata";
-    v.playsInline = true;
-    v.setAttribute("aria-label", "Відеоурок YT Cartell Studio");
-    var tr = document.createElement("track");
-    tr.kind = "subtitles"; tr.srclang = "uk"; tr.label = "Українська";
-    tr.src = "media/tutorial.uk.vtt";
-    v.appendChild(tr);
-    v.addEventListener("loadedmetadata", function () {
-      // the poster is optional: without it the first screenshot of the app stands in
-      var probe = new Image();
-      probe.onload = function () { v.poster = probe.src; };
-      probe.onerror = function () { v.poster = "assets/img/shots/hero-light-1080.webp"; };
-      probe.src = "media/tutorial-poster.jpg";
-      var empty = $("#video-empty");
-      if (empty) empty.remove();
-      card.classList.add("has-video");
-      card.appendChild(v);
-    }, { once: true });
-    v.src = "media/tutorial.mp4";
-    v.load();
-  })();
-
-  /* ---------------- release promo (2.0.1) ----------------
-     The slot stays hidden until media/promo-2.0.1.mp4 is published next to this page;
-     media/promo-2.0.1-poster.jpg is its optional poster. */
-  (function () {
-    var slot = $("#promo");
-    var card = $("#promo-card");
-    if (!slot || !card) return;
-    var src = slot.getAttribute("data-src");
-    if (!src) return;
-    var v = document.createElement("video");
-    v.controls = true;
-    v.preload = "metadata";
-    v.playsInline = true;
-    v.setAttribute("aria-label", slot.getAttribute("data-label") || "Промо-ролик");
-    var tr = document.createElement("track");
-    tr.kind = "subtitles"; tr.srclang = "uk"; tr.label = "Українська";
-    tr.src = src.replace(/\.mp4$/, ".uk.vtt");
-    v.appendChild(tr);
-    v.addEventListener("loadedmetadata", function () {
-      var poster = slot.getAttribute("data-poster");
-      if (poster) {
-        var probe = new Image();
-        probe.onload = function () { v.poster = probe.src; };
-        probe.src = poster;
-      }
-      card.classList.add("has-video");
-      card.appendChild(v);
-      slot.hidden = false;
-      $$("[data-reveal]", slot).forEach(function (el) { el.classList.add("is-in"); });
-    }, { once: true });
-    v.src = src;
-    v.load();
+    var list = $("#videos");
+    if (!list) return;
+    function lead() {
+      var first = null;
+      $$(".vid", list).forEach(function (el) {
+        if (!el.hidden && !first) first = el;
+        el.classList.remove("is-lead");
+      });
+      if (first) first.classList.add("is-lead");
+    }
+    $$(".vid[data-probe]", list).forEach(function (item) {
+      var v = $("video", item);
+      if (!v) return;
+      v.addEventListener("loadedmetadata", function () {
+        if (v.getAttribute("data-poster")) v.poster = v.getAttribute("data-poster");
+        item.hidden = false;
+        $$("[data-reveal]", item).forEach(function (el) { el.classList.add("is-in"); });
+        lead();
+      }, { once: true });
+      v.preload = "metadata";
+      v.load();
+    });
+    lead();
   })();
 
   /* ---------------- guide pages: the section in view ---------------- */
@@ -345,8 +313,30 @@
     update();
   })();
 
+  /* ---------------- «no Mac build yet» notes ----------------
+     An element with data-mac-pending="X.Y.Z" stays visible only while X.Y.Z is the newest
+     release and that release has no macOS build. */
+  function macPending(version, hasMac) {
+    $$("[data-mac-pending]").forEach(function (el) {
+      var v = el.getAttribute("data-mac-pending");
+      el.hidden = hasMac || (!!v && v !== version);
+    });
+  }
+
   // Only the landing page has the download block: the release lookup below is for it.
-  if (!$("#dl-version")) return;
+  if (!$("#dl-version")) {
+    if ($("[data-mac-pending]") && window.fetch) {
+      fetch(API + "/releases/latest", { headers: { "Accept": "application/vnd.github+json" } })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) {
+          if (!j) return;
+          var names = (j.assets || []).map(function (a) { return a.name; }).join(" ");
+          macPending(String(j.tag_name || "").replace(/^v/i, ""), /macos-(arm64|x64|universal)\.zip/i.test(names));
+        })
+        .catch(function () {});
+    }
+    return;
+  }
 
   /* ---------------- OS detection ---------------- */
   var ua = navigator.userAgent || "";
@@ -413,9 +403,14 @@
     }
     heroLabel.textContent = LABELS[os];
     var a = rel && rel.assets && rel.assets[os];
+    var fb = !a && rel && rel.fallback && rel.fallback[os];
     if (a) {
       heroDl.href = a.url;
       heroMeta.textContent = "Версія " + rel.version + " · " + mb(a.size) + " · " + SYS[os];
+    } else if (fb) {
+      // the newest release has no build for this Mac yet: offer the newest one that has
+      heroDl.href = fb.url;
+      heroMeta.textContent = "Версія " + fb.version + " · " + mb(fb.size) + " · " + SYS[os] + " (збірки " + rel.version + " для Mac ще немає)";
     } else if (rel) {
       heroLabel.textContent = "Усі файли версії " + rel.version;
       heroDl.href = rel.url;
@@ -436,19 +431,22 @@
       var row = $('.dl-row[data-os="' + key + '"]');
       if (!row) return;
       var a = rel && rel.assets[key], btn = $(".btn", row), meta = $(".meta", row);
+      var fb = !a && rel && rel.fallback && rel.fallback[key];
       var txt = btn.lastChild;
-      if (txt && txt.nodeType === 3 && rel) txt.nodeValue = a ? "Завантажити" : "Сторінка релізу";
-      if (a) {
-        btn.href = a.url;
+      if (txt && txt.nodeType === 3 && rel) txt.nodeValue = a || fb ? "Завантажити" : "Сторінка релізу";
+      if (a || fb) {
+        var f = a || fb;
+        btn.href = f.url;
         btn.setAttribute("download", "");
-        btn.setAttribute("aria-label", "Завантажити " + a.name + ", " + mb(a.size));
-        meta.textContent = a.name + " · " + mb(a.size);
+        btn.setAttribute("aria-label", "Завантажити " + f.name + ", " + mb(f.size));
+        meta.textContent = f.name + " · " + mb(f.size) + (fb ? " · версії " + rel.version + " для Mac ще немає" : "");
       } else if (rel) {
         btn.href = rel.url;
         btn.removeAttribute("download");
         meta.textContent = "Збірка ще готується — з'явиться на сторінці релізу " + rel.version;
       }
     });
+    if (rel) macPending(rel.version, !!(rel.assets["mac-arm"] || rel.assets["mac-x64"]));
     if (rel) {
       ver.textContent = "Версія " + rel.version + (rel.date ? " · " + dateUk(rel.date) : "");
     } else if (state === "none") {
@@ -485,6 +483,19 @@
     (list || []).forEach(function (r) { (r.assets || []).forEach(function (a) { if (/\.(exe|zip|dmg|pkg|msi)$/i.test(a.name)) n += a.download_count || 0; }); });
     return n;
   }
+  // newest published release per system — a Mac build can come out later than the Windows one
+  function newestBuilds(list) {
+    var out = {};
+    (list || []).forEach(function (r) {
+      if (r.draft || r.prerelease) return;
+      (r.assets || []).forEach(function (a) {
+        Object.keys(PATTERNS).forEach(function (k) {
+          if (!out[k] && PATTERNS[k].test(a.name)) out[k] = { name: a.name, size: a.size, url: a.browser_download_url, version: String(r.tag_name || "").replace(/^v/i, "") };
+        });
+      });
+    });
+    return out;
+  }
   function getJSON(url) {
     return fetch(url, { headers: { "Accept": "application/vnd.github+json" } }).then(function (r) {
       if (!r.ok) { var e = new Error("HTTP " + r.status); e.status = r.status; throw e; }
@@ -501,10 +512,11 @@
   if (!window.fetch) { if (!cached) render(null, null, "error"); return; }
   Promise.all([
     getJSON(API + "/releases/latest").then(parseLatest).catch(function (e) { if (e.status === 404) return "none"; throw e; }),
-    getJSON(API + "/releases?per_page=100").then(sumDownloads).catch(function () { return null; })
+    getJSON(API + "/releases?per_page=100").catch(function () { return null; })
   ]).then(function (res) {
     var rel = res[0] === "none" ? null : res[0];
-    var total = res[1];
+    var total = res[1] ? sumDownloads(res[1]) : null;
+    if (rel && res[1]) rel.fallback = newestBuilds(res[1]);
     if (rel) {
       store(CACHE_KEY, JSON.stringify({ t: Date.now(), rel: rel, total: total }));
       render(rel, total, "ok");

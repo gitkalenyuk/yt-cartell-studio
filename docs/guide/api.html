@@ -61,7 +61,7 @@
       <span>YT Cartell Studio</span>
     </a>
     <nav class="nav" aria-label="Розділи">
-      <ul><li><a href="../#new">Нове в 2.0.1</a></li><li><a href="./" aria-current="page">Довідник</a></li><li><a href="../#how">Як це працює</a></li><li><a href="../#access">Доступ</a></li><li><a href="../#faq">Питання</a></li></ul>
+      <ul><li><a href="../#new">Що нового</a></li><li><a href="./" aria-current="page">Довідник</a></li><li><a href="../changelog/">Історія версій</a></li><li><a href="../#how">Як це працює</a></li><li><a href="../#faq">Питання</a></li></ul>
     </nav>
     <div class="header-actions">
       <button class="icon-btn theme-toggle" type="button" aria-label="Увімкнути темну тему" title="Тема">
@@ -88,13 +88,13 @@
     <aside class="g-toc" aria-label="Зміст сторінки">
       <h2>На цій сторінці</h2>
       <ol><li><a href="#presets">Готові сервіси</a></li><li><a href="#universal">Універсальний: три способи</a></li><li><a href="#ai">Налаштувати з документації</a></li><li><a href="#json">Опис API: основи</a></li><li><a href="#check">Перевірка</a></li><li><a href="#royal">RoyalTechno</a></li><li><a href="#google">Google: Gemini Omni Flash</a></li><li><a href="#speed">Сцен одночасно</a></li><li><a href="#faq">Питання</a></li></ol>
-      <div class="g-toc-more"><h2>Інші розділи</h2><ol><li><a href="modes.html">Голос у відео і режими</a></li><li><a href="remake.html">Перезняти за прикладом</a></li><li><a href="mic.html">Мікрофон</a></li><li><a href="telegram.html">Telegram-бот</a></li><li><a href="export.html">Експорт у редактори</a></li><li><a href="voice.html">Озвучка й ключі</a></li><li><a href="transfer.html">Перенесення налаштувань</a></li></ol></div>
+      <div class="g-toc-more"><h2>Інші розділи</h2><ol><li><a href="failed.html">Невдалі сцени і точні помилки</a></li><li><a href="assistant.html">Помічник підключення</a></li><li><a href="connect.html">Підключення будь-якого сервісу</a></li><li><a href="catalogs.html">Каталоги моделей</a></li><li><a href="multivoice.html">Мультиголос</a></li><li><a href="modes.html">Голос у відео і режими</a></li><li><a href="remake.html">Перезняти за прикладом</a></li><li><a href="mic.html">Мікрофон</a></li><li><a href="telegram.html">Telegram-бот</a></li><li><a href="export.html">Експорт у редактори</a></li><li><a href="voice.html">Озвучка й ключі</a></li><li><a href="transfer.html">Перенесення налаштувань</a></li></ol></div>
     </aside>
     <article class="g-article">
       <details class="g-toc-m"><summary>Зміст сторінки<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><ol><li><a href="#presets">Готові сервіси</a></li><li><a href="#universal">Універсальний: три способи</a></li><li><a href="#ai">Налаштувати з документації</a></li><li><a href="#json">Опис API: основи</a></li><li><a href="#check">Перевірка</a></li><li><a href="#royal">RoyalTechno</a></li><li><a href="#google">Google: Gemini Omni Flash</a></li><li><a href="#speed">Сцен одночасно</a></li><li><a href="#faq">Питання</a></li></ol></details>
 <section aria-labelledby="presets"><h2 id="presets">Готові сервіси</h2>
 <p><b>Налаштування → Підключення → «Кадри» / «Відео»</b> → «Хто малює кадри» / «Хто знімає відео» → <b>«Своє API»</b> → «Сервіс»:</p>
-<ul class="g-list"><li>Кадри: OpenAI (GPT Image), fal.ai, Replicate, RoyalTechno, OpenAI-сумісний сервер.</li><li>Відео: fal.ai, Replicate, Runway, Luma (Ray), MiniMax (Hailuo), RoyalTechno.</li><li>Будь-який інший сервіс — <b>«Універсальний (будь-яке API)»</b>.</li></ul></section>
+<ul class="g-list"><li>Кадри: OpenAI (GPT Image), fal.ai, Replicate, RoyalTechno, OpenAI-сумісний сервер.</li><li>Відео: fal.ai, Replicate, Runway, Luma (Ray), MiniMax (Hailuo), RoyalTechno.</li><li>Будь-який інший сервіс — <b>«Універсальний (будь-яке API)»</b>.</li></ul><div class="callout tip"><svg class="i" aria-hidden="true"><use href="#i-bulb"/></svg><div><p>Не хочеш шукати адресу й назву моделі — <b>«Вибрати з каталогу»</b> в блоці «Своє API»: 199 моделей відео й 188 моделей кадрів із параметрами. <a href="catalogs.html">Каталоги моделей</a>.</p></div></div></section>
 <section aria-labelledby="universal"><h2 id="universal">Універсальний: три способи</h2>
 <ol class="g-steps"><li><div><b>«Шаблон…»</b> — «RoyalTechno (задачі)», «Replicate (predictions)», «fal.ai (черга)», «OpenAI Images (синхронно)» (лише кадри), «Простий синхронний: POST → посилання», «Асинхронні задачі (каркас)». Заміни шляхи й поля під своє API.</div></li><li><div>Або <b>«Налаштувати з документації (ШІ)»</b> — див. нижче.</div></li><li><div>Або встав свій JSON у поле <b>«Опис API (JSON)»</b>.</div></li><li><div>Заповни <b>«Адреса»</b> (корінь API, напр. <code>https://api.example.com/v1</code>), <b>«API-ключ»</b> і <b>«Модель»</b> (іде в <code>{{model}}</code>) → <b>«Перевірити»</b>.</div></li></ol>
 <div class="g-duo"><figure class="g-fig g-shot" style="--w:628px"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="../assets/img/guide/api-setup-dark-628.webp 628w" sizes="(min-width: 1100px) 380px, (min-width: 720px) 46vw, calc(100vw - 40px)"><img src="../assets/img/guide/api-setup-light-628.webp" srcset="../assets/img/guide/api-setup-light-628.webp 628w" sizes="(min-width: 1100px) 380px, (min-width: 720px) 46vw, calc(100vw - 40px)" width="628" height="760" alt="Своє API для відео: сервіс «Універсальний (будь-яке API)», модель, адреса, ключ і блок «Налаштувати з документації (ШІ)»" loading="lazy" decoding="async"></picture><figcaption>Сервіс, адреса, ключ і модель.</figcaption></figure><figure class="g-fig g-shot" style="--w:628px"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="../assets/img/guide/api-json-dark-628.webp 628w" sizes="(min-width: 1100px) 380px, (min-width: 720px) 46vw, calc(100vw - 40px)"><img src="../assets/img/guide/api-json-light-628.webp" srcset="../assets/img/guide/api-json-light-628.webp 628w" sizes="(min-width: 1100px) 380px, (min-width: 720px) 46vw, calc(100vw - 40px)" width="628" height="870" alt="Опис API (JSON) з асинхронним шаблоном, позначка «Опис коректний» і список підстановок" loading="lazy" decoding="async"></picture><figcaption>Опис API з живою перевіркою.</figcaption></figure></div></section>
@@ -175,16 +175,16 @@
         <p>Студія, де історія стає відео. Для учасників спільноти YT Cartell.</p>
       </div>
       <div>
-        <h2>Довідник 2.0.1</h2>
-        <ul><li><a href="./">Що нового — усі розділи</a></li><li><a href="modes.html">Голос у відео і режими</a></li><li><a href="remake.html">Перезняти за прикладом</a></li><li><a href="mic.html">Мікрофон</a></li><li><a href="telegram.html">Telegram-бот</a></li><li><a href="export.html">Експорт у редактори</a></li><li><a href="api.html">Своє API, RoyalTechno і Google</a></li><li><a href="voice.html">Озвучка й ключі</a></li><li><a href="transfer.html">Перенесення налаштувань</a></li></ul>
+        <h2>Довідник</h2>
+        <ul><li><a href="./">Усі розділи</a></li><li><a href="./failed.html">Невдалі сцени і точні помилки</a></li><li><a href="./assistant.html">Помічник підключення</a></li><li><a href="./connect.html">Підключення будь-якого сервісу</a></li><li><a href="./catalogs.html">Каталоги моделей</a></li><li><a href="./multivoice.html">Мультиголос</a></li><li><a href="./telegram.html">Telegram-бот</a></li><li><a href="./modes.html">Голос у відео і режими</a></li></ul>
       </div>
       <div>
         <h2>Програма</h2>
         <ul>
           <li><a href="../#download">Завантажити</a></li>
-          <li><a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases/tag/v2.0.1" rel="noopener">Що нового у версії 2.0.1</a></li>
+          <li><a href="../changelog/">Історія версій</a></li>
           <li><a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases" rel="noopener">Усі версії на GitHub</a></li>
-          <li><a href="../#tutorial">Відеоурок</a></li>
+          <li><a href="../#tutorial">Відео</a></li>
           <li><a href="../#faq">Питання</a></li>
         </ul>
       </div>

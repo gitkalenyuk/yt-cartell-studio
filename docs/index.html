@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YT Cartell Studio — встав історію, отримай готове відео</title>
-<meta name="description" content="Програма для фейслес-каналів YouTube і Shorts: встав історію — студія напише план, намалює однакових героїв, зніме кліпи, озвучить і змонтує готовий .mp4 із субтитрами й обкладинкою. Нове в 2.0.1: голос у відео, перезйомка за прикладом, Telegram-бот, експорт у редактори. Windows і macOS, українською.">
+<meta name="description" content="Програма для фейслес-каналів YouTube і Shorts: встав історію — студія напише план, намалює однакових героїв, зніме кліпи, озвучить і змонтує готовий .mp4 із субтитрами й обкладинкою. Нове в 2.0.3: жодних зниклих сцен і точні помилки, будь-який сервіс і «Помічник підключення», мультиголос. Windows і macOS, українською.">
 <link rel="canonical" href="https://gitkalenyuk.github.io/yt-cartell-studio/">
 <meta name="theme-color" content="#FFF4E6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1B1714" media="(prefers-color-scheme: dark)">
@@ -90,7 +90,7 @@
     </a>
     <nav class="nav" aria-label="Розділи">
       <ul>
-        <li><a href="#new">Нове в 2.0.1</a></li>
+        <li><a href="#new">Що нового</a></li>
         <li><a href="#how">Як це працює</a></li>
         <li><a href="#styles">Стилі</a></li>
         <li><a href="guide/">Довідник</a></li>
@@ -117,7 +117,7 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <a class="hero-badge" href="#new" data-hero style="--hd:0"><span class="pill pill-new">Нове</span><span class="t">Версія 2.0.1: голос у відео, Telegram-бот, експорт у редактори</span><svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+      <a class="hero-badge" href="#new" data-hero style="--hd:0"><span class="pill pill-new">Нове</span><span class="t">Версія 2.0.3: без зниклих сцен, будь-який сервіс, мультиголос</span><svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
       <h1 class="display" id="hero-title" data-hero style="--hd:1">Встав історію&nbsp;—<br> отримай готове відео</h1>
       <span class="dash" aria-hidden="true"></span>
       <p class="lead" data-hero style="--hd:2">YT Cartell Studio сама пише план, малює героїв однаковими в кожному кадрі, знімає кліпи, озвучує й монтує .mp4 із субтитрами та обкладинкою. Кожен крок можна виправити, поки не витратив жодного кредиту.</p>
@@ -128,7 +128,7 @@
         </a>
         <a class="btn btn-secondary" href="#tutorial">
           <svg class="i" aria-hidden="true"><use href="#i-play"/></svg>
-          Відеоурок
+          Відео
         </a>
       </div>
       <p class="hero-meta" data-hero style="--hd:4">
@@ -148,32 +148,34 @@
   </div>
 </section>
 
-<!-- NEW IN 2.0.1 -->
+<!-- WHAT'S NEW: the newest version first, the earlier ones briefly (all of them: changelog/) -->
 <section class="section" id="new" aria-labelledby="new-title">
   <div class="wrap">
     <div class="section-head split new-head">
-      <h2 class="h2" id="new-title" data-reveal>Нове в 2.0.1</h2>
+      <h2 class="h2" id="new-title" data-reveal>Що нового в 2.0.3</h2>
       <div data-reveal style="--rd:1">
-        <p class="lead">Герої говорять прямо в кадрі, фільм за прикладом із YouTube, мікрофон, Telegram-бот і експорт у DaVinci Resolve, Premiere, Final Cut та CapCut.</p>
+        <p class="lead">Сцени більше не зникають з монтажу мовчки, будь-який сервіс підключається сам, а диктор і герої читають різними голосами.</p>
         <p class="lead">Уже маєш студію — натисни «Оновлення» в меню ліворуч: проєкти, ключі й налаштування лишаться на місці.</p>
-        <div class="new-links"><a class="link" href="guide/">Довідник 2.0.1 — як цим користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a><a class="link" href="https://github.com/gitkalenyuk/yt-cartell-studio/releases/tag/v2.0.1" rel="noopener">Нотатки до релізу<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div>
+        <p class="mac-note" data-mac-pending="2.0.3">Версія 2.0.3 поки вийшла для Windows. Для Mac найновіша збірка — 2.0.2, її й дає кнопка <a class="prose-link" href="#download">«Завантажити»</a>.</p>
+        <div class="new-links"><a class="link" href="guide/">Довідник — як цим користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a><a class="link" href="changelog/">Історія версій<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a><a class="link" href="https://github.com/gitkalenyuk/yt-cartell-studio/releases/tag/v2.0.3" rel="noopener">Нотатки до релізу<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div>
       </div>
     </div>
-    <!-- Release promo: site.js shows it once docs/media/promo-2.0.1.mp4 is published (poster: docs/media/promo-2.0.1-poster.jpg). -->
-    <div class="promo" id="promo" data-src="media/promo-2.0.1.mp4" data-poster="media/promo-2.0.1-poster.jpg" data-label="Промо-ролик YT Cartell Studio 2.0.1" hidden>
-      <div class="video-card" id="promo-card"></div>
-    </div>
     <div class="new-grid" data-reveal="shot">
-      <a class="new-card new-card-lg" href="guide/modes.html"><div class="new-media"><picture><img src="assets/img/new/card-modes-600.webp" srcset="assets/img/new/card-modes-900.webp 900w, assets/img/new/card-modes-600.webp 600w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="900" height="562" alt="Кадр із анімованим текстом «Населення Землі — 8,1 млрд» поверх ілюстрації" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Голос у відео і режими</h3><p>Герої говорять прямо в кадрі, фільми без людей і моушн-графіка з анімованими заголовками й числами.</p><span class="link">Як користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
-      <a class="new-card new-card-lg" href="guide/remake.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-remake-dark-900.webp 900w, assets/img/new/card-remake-dark-600.webp 600w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-remake-light-600.webp" srcset="assets/img/new/card-remake-light-900.webp 900w, assets/img/new/card-remake-light-600.webp 600w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="900" height="563" alt="Розбір прикладу: мініатюра відео, факти й текст розбору сцена за сценою" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Перезняти за прикладом</h3><p>Посилання на YouTube + твоє побажання — Gemini розбирає відео, студія робить новий фільм за зразком.</p><span class="link">Як користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
-      <a class="new-card" href="guide/mic.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-mic-dark-899.webp 899w, assets/img/new/card-mic-dark-600.webp 600w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-mic-light-600.webp" srcset="assets/img/new/card-mic-light-899.webp 899w, assets/img/new/card-mic-light-600.webp 600w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="899" height="562" alt="Нова історія: текст з&#x27;являється, поки говориш, під полем — рівень звуку й кнопка «Стоп»" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Мікрофон</h3><p>Говориш — текст з'являється в «Новій історії». Шість хмарних сервісів або whisper.cpp без інтернету.</p><span class="link">Як користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
-      <a class="new-card" href="guide/telegram.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-telegram-dark-604.webp 604w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-telegram-light-604.webp" srcset="assets/img/new/card-telegram-light-604.webp 604w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="604" height="377" alt="Керування через бота: одноразовий код 482 913 і кнопка «Відкрити бота»" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Telegram-бот</h3><p>Новий проєкт текстом чи голосовим, черга, прогрес наживо й готове відео — з телефона.</p><span class="link">Як користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
-      <a class="new-card" href="guide/export.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-export-dark-498.webp 498w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-export-light-498.webp" srcset="assets/img/new/card-export-light-498.webp 498w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="498" height="311" alt="Експорт у DaVinci Resolve готовий: кнопки «Відкрити папку» й «Показати ZIP»" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Експорт у редактори</h3><p>DaVinci Resolve, Premiere Pro, Final Cut Pro, CapCut, Kdenlive, Shotcut, OpenTimelineIO.</p><span class="link">Як користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
-      <a class="new-card" href="guide/api.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-api-dark-628.webp 628w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-api-light-628.webp" srcset="assets/img/new/card-api-light-628.webp 628w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="628" height="392" alt="Своє API для відео: універсальний сервіс, адреса, ключ і «Налаштувати з документації (ШІ)»" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Своє API, RoyalTechno і Google</h3><p>Будь-який сервіс кадрів і відео за описом JSON або з документації, пресет RoyalTechno, Gemini Omni Flash.</p><span class="link">Як користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
-      <a class="new-card" href="guide/voice.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-voice-dark-628.webp 628w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-voice-light-628.webp" srcset="assets/img/new/card-voice-light-628.webp 628w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="628" height="392" alt="Ключі ElevenLabs: три ключі зі станом, «Додати кілька» і «Видалити всі з помилкою»" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Озвучка й ключі</h3><p>Свої ключі в кожного сервісу, ключі пачкою, голос за ID, AssemblyAI і що змінюється в ElevenLabs.</p><span class="link">Як користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
-      <a class="new-card" href="guide/transfer.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-transfer-dark-558.webp 558w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-transfer-light-558.webp" srcset="assets/img/new/card-transfer-light-558.webp 558w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="558" height="349" alt="Експорт налаштувань: що взяти — підключення й ключі, профілі, типові налаштування" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Перенесення налаштувань</h3><p>Усі ключі, підключення й профілі одним зашифрованим файлом — на інший комп'ютер чи як резервна копія.</p><span class="link">Як користуватися<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
+      <a class="new-card new-card-lg" href="guide/failed.html"><div class="new-media"><picture><img src="assets/img/new/card-gaps-light-600.webp" srcset="assets/img/new/card-gaps-light-796.webp 796w, assets/img/new/card-gaps-light-600.webp 600w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="796" height="498" alt="Вікно «Не всі сцени готові — 2 сцени»: для кожної сцени точна помилка G-Labs і підказка, кнопки «Зупинитись», «Змонтувати без них» і «З кадром замість відео»" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Без заглушок і зниклих сцен</h3><p>Студія нічого не підставляє мовчки: перед монтажем показує невдалі сцени з точною помилкою сервісу й питає — змонтувати без них, з кадром замість відео чи зупинитись.</p><span class="link">Як це працює<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
+      <a class="new-card new-card-lg" href="guide/assistant.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-assistant-dark-900.webp 900w, assets/img/new/card-assistant-dark-600.webp 600w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-assistant-light-600.webp" srcset="assets/img/new/card-assistant-light-900.webp 900w, assets/img/new/card-assistant-light-600.webp 600w" sizes="(min-width: 1100px) 520px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="900" height="527" alt="Помічник підключення: вставлені адреса, ключі й посилання, усе знайдене — і план «Текст → tokify.sale · gemini-3.8-flash» з позначкою «Працює»" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Помічник підключення</h3><p>Встав адреси, ключі й посилання як є — студія сама розбереться, що куди, перевірить і налаштує. ШІ бачить ключі лише замаскованими.</p><span class="link">Як це працює<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
+      <a class="new-card" href="guide/connect.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-errors-dark-868.webp 868w, assets/img/new/card-errors-dark-600.webp 600w" sizes="(min-width: 1100px) 380px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-errors-light-600.webp" srcset="assets/img/new/card-errors-light-868.webp 868w, assets/img/new/card-errors-light-600.webp 600w" sizes="(min-width: 1100px) 380px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="868" height="543" alt="Картка «Текст і сценарій»: авторизація «Авто (Bearer)» і помилка «Не вдалося» — які адреси пробували, запит, відповідь 404 і підказка" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Будь-який сервіс</h3><p>Адреса без /v1 підбирається сама; Anthropic, Ollama, Azure OpenAI й вибір авторизації. Не вийшло — видно сервіс, код і відповідь.</p><span class="link">Як це працює<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
+      <a class="new-card" href="guide/catalogs.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-catalogs-dark-677.webp 677w" sizes="(min-width: 1100px) 380px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-catalogs-light-677.webp" srcset="assets/img/new/card-catalogs-light-677.webp 677w" sizes="(min-width: 1100px) 380px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="677" height="423" alt="Каталог моделей відео: пошук і 199 моделей за сервісами — fal.ai, Replicate, Runway, RoyalTechno та інші" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Каталоги моделей</h3><p>199 моделей відео, 188 — кадрів, 144 моделі й голоси озвучки, 36 текстових сервісів. «Вибрати з каталогу» заповнить сервіс, адресу й модель.</p><span class="link">Як це працює<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
+      <a class="new-card" href="guide/multivoice.html"><div class="new-media"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/new/card-multivoice-dark-424.webp 424w" sizes="(min-width: 1100px) 380px, (min-width: 700px) 46vw, calc(100vw - 32px)"><img src="assets/img/new/card-multivoice-light-424.webp" srcset="assets/img/new/card-multivoice-light-424.webp 424w" sizes="(min-width: 1100px) 380px, (min-width: 700px) 46vw, calc(100vw - 32px)" width="424" height="265" alt="Текст озвучки за голосами: одна репліка — «Диктор», друга — «Диктор 2»" loading="lazy" decoding="async"></picture></div><div class="new-body"><h3>Мультиголос</h3><p>Диктор, Диктор 2 і 3 та свій голос кожному героєві. Студія сама розподіляє репліки й голоси, субтитри — кольором мовця.</p><span class="link">Як це працює<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></span></div></a>
     </div>
-    <div class="also" data-reveal><b>І ще:</b><span class="pill">FFmpeg одним кліком</span><span class="pill">до 20 сцен одночасно</span><span class="pill">гучність −14 LUFS</span><span class="pill">Gemini Omni Flash</span><span class="pill">71 стиль · 36 жанрів</span><a class="link" href="guide/#more">Докладніше<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div>
+    <div class="also" data-reveal><b>І ще:</b><span class="pill">Lumean — нова озвучка</span><span class="pill">Telegram: кнопки рішення для невдалих сцен</span><span class="pill">кліпи не обрізає в кінці</span><span class="pill">озвучка довша за кліп → «перезняти?»</span><span class="pill">розпізнавання мови через «Своє API»</span><a class="link" href="guide/#more">Докладніше<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div>
+    <div class="rel-prev" data-reveal>
+      <h3 class="rel-prev-title">Попередні версії</h3>
+      <div class="rel-grid">
+        <article class="rel-item"><h4>2.0.2 <time datetime="2026-10-02">2 жовтня 2026</time></h4><p>Ключі Google AI Studio нового формату <code>AQ.…</code> — у «Підключення → Google», пачкою й у диктуванні. На Mac вікно відкривається надійно, навіть після сну без активного дисплея.</p><a class="link" href="changelog/#v2.0.2">Усі зміни 2.0.2<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></article>
+        <article class="rel-item"><h4>2.0.1 <time datetime="2026-10-02">2 жовтня 2026</time></h4><p>Велике оновлення: голос у відео, «Перезняти за прикладом», мікрофон, Telegram-бот, експорт у DaVinci Resolve, Premiere, Final Cut і CapCut, своє API для будь-якого сервісу й перенесення налаштувань.</p><a class="link" href="changelog/#v2.0.1">Усі зміни 2.0.1<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></article>
+      </div>
+      <div class="rel-foot"><a class="link" href="changelog/">Історія версій<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a><a class="link" href="https://github.com/gitkalenyuk/yt-cartell-studio/releases" rel="noopener">Усі релізи на GitHub<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div>
+    </div>
   </div>
 </section>
 
@@ -260,22 +262,42 @@
   </div>
 </section>
 
-<!-- TUTORIAL -->
-<section class="section section-tight" id="tutorial" aria-labelledby="tutorial-title">
-  <div class="wrap video-wrap">
-    <div class="video-copy">
-      <h2 class="h2" id="tutorial-title" data-reveal>Відеоурок: від історії до готового відео</h2>
-      <p class="lead" data-reveal style="--rd:1">Подивись, як пройти весь шлях у справжній студії — що натискати й де що лежить.</p>
+<!-- VIDEOS: the newest tutorial first, then promos and older tutorials.
+     Add a video: put NAME.mp4, NAME-poster.jpg and, if there are subtitles, NAME.uk.vtt into docs/media/
+     and copy one <article class="vid">. An entry with data-probe stays hidden until its .mp4 is published
+     (site.js checks it; give it data-poster instead of poster, so nothing is requested before); the first
+     visible entry is shown large. Subtitles must be WebVTT (.vtt), not .srt. -->
+<section class="section section-tight" id="tutorial" aria-labelledby="videos-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <h2 class="h2" id="videos-title" data-reveal>Відео</h2>
+      <p class="lead" data-reveal style="--rd:1">Відеоуроки в справжній студії — що натискати й де що лежить, — і короткі ролики про нові версії.</p>
     </div>
-    <div class="video-card" id="video-card" data-reveal="shot">
-      <div class="video-empty" id="video-empty">
-        <div class="video-empty-inner">
-          <div class="empty-ring" aria-hidden="true"><span><svg class="i"><use href="#i-play"/></svg></span></div>
-          <h3 class="h3">Відеоурок скоро</h3>
-          <p>Ми вже його готуємо. Щойно буде — з'явиться тут і в Telegram-каналі YT Cartell.</p>
-          <a class="link" href="https://t.me/YT_cartell" rel="noopener">Канал YT Cartell<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+    <div class="vid-list" id="videos">
+      <article class="vid" data-probe hidden aria-labelledby="vid-tutorial-203">
+        <div class="vid-copy">
+          <span class="pill pill-new">Версія 2.0.3</span>
+          <h3 class="h3" id="vid-tutorial-203">Відеоурок: що нового в 2.0.3</h3>
+          <p>Нові можливості версії 2.0.3 у справжній студії.</p>
         </div>
-      </div>
+        <div class="video-card"><video controls preload="none" playsinline data-poster="media/tutorial-2.0.3-poster.jpg" aria-labelledby="vid-tutorial-203"><source src="media/tutorial-2.0.3.mp4" type="video/mp4"><track kind="subtitles" srclang="uk" label="Українська" src="media/tutorial-2.0.3.uk.vtt"></video></div>
+      </article>
+      <article class="vid is-lead" aria-labelledby="vid-tutorial-200">
+        <div class="vid-copy">
+          <span class="pill">Версія 2.0.0 · 7 хв</span>
+          <h3 class="h3" id="vid-tutorial-200">Відеоурок: від історії до готового відео</h3>
+          <p>Увесь шлях у студії: перший запуск, Головна, п'ять кроків проєкту, черга, переклад і сповіщення.</p>
+        </div>
+        <div class="video-card"><video controls preload="none" playsinline poster="media/tutorial-poster.jpg" aria-labelledby="vid-tutorial-200"><source src="media/tutorial.mp4" type="video/mp4"><track kind="subtitles" srclang="uk" label="Українська" src="media/tutorial.uk.vtt"></video></div>
+      </article>
+      <article class="vid" aria-labelledby="vid-promo-201">
+        <div class="vid-copy">
+          <span class="pill">Версія 2.0.1 · 1 хв</span>
+          <h3 class="h3" id="vid-promo-201">Промо-ролик 2.0.1</h3>
+          <p>Голос у відео, перезйомка за прикладом, Telegram-бот і експорт у редактори — за хвилину.</p>
+        </div>
+        <div class="video-card"><video controls preload="none" playsinline poster="media/promo-2.0.1-poster.jpg" aria-labelledby="vid-promo-201"><source src="media/promo-2.0.1.mp4" type="video/mp4"><track kind="subtitles" srclang="uk" label="Українська" src="media/promo-2.0.1.uk.vtt"></video></div>
+      </article>
     </div>
   </div>
 </section>
@@ -287,14 +309,14 @@
       <h2 class="h2" id="autopilot-title" data-reveal>Не хочеш покроково? Натисни «Автопілот»</h2>
       <p class="lead" data-reveal style="--rd:1">Встав історію, вибери профіль — і студія сама пройде всі п'ять кроків: план, герої, кадри, відео й озвучка, монтаж, а за бажанням ще й обкладинка.</p>
       <dl class="deflist" data-reveal style="--rd:2">
-        <div><span class="ico" aria-hidden="true"><svg class="i"><use href="#i-refresh"/></svg></span><dt>Повторні спроби</dt><dd>Кадри, кліпи й озвучку, що не вдалися, студія пробує ще раз — до трьох разів. Може змонтувати фільм, навіть якщо якась сцена так і не вийшла.</dd></div>
+        <div><span class="ico" aria-hidden="true"><svg class="i"><use href="#i-refresh"/></svg></span><dt>Повторні спроби</dt><dd>Кадри, кліпи й озвучку, що не вдалися, студія пробує ще раз — до трьох разів. Якщо сцена так і не вийшла, автопілот зупиниться перед монтажем і покаже чому — або, як вибереш у налаштуваннях, змонтує без неї чи з кадром замість відео. <a class="prose-link" href="guide/failed.html">Докладніше</a></dd></div>
         <div><span class="ico" aria-hidden="true"><svg class="i"><use href="#i-layers"/></svg></span><dt>Профілі</dt><dd>«YouTube історія 16:9», «Shorts / Reels 9:16», «Дитяча казка», «Документальне пояснення» — або опиши свій канал словами, і ШІ сам заповнить профіль.</dd></div>
         <div><span class="ico" aria-hidden="true"><svg class="i"><use href="#i-list-video"/></svg></span><dt>Черга</dt><dd>Прогрес усіх проєктів наживо. Проєкт можна закрити — робота йде далі.</dd></div>
         <div><span class="ico" aria-hidden="true"><svg class="i"><use href="#i-bell"/></svg></span><dt>Telegram-бот</dt><dd>Новий проєкт текстом чи голосовим, черга, прогрес наживо й готове відео — прямо в чат на телефоні. <a class="prose-link" href="guide/telegram.html">Як підключити</a></dd></div>
       </dl>
     </div>
     <figure class="cutout cutout-natural soft-edges" data-reveal="shot">
-      <picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/shots/autopilot-dark-669.webp 669w, assets/img/shots/autopilot-dark-500.webp 500w" sizes="(min-width: 720px) 669px, calc(100vw - 32px)"><img src="assets/img/shots/autopilot-light-500.webp" srcset="assets/img/shots/autopilot-light-669.webp 669w, assets/img/shots/autopilot-light-500.webp 500w" sizes="(min-width: 720px) 669px, calc(100vw - 32px)" width="669" height="538" alt="Налаштування автопілота: ланцюжок План → Персонажі → Кадри → Відео й озвучка → Монтаж → Обкладинка, повторні спроби та сповіщення в Telegram" loading="lazy" decoding="async"></picture>
+      <picture><source data-dark media="(prefers-color-scheme: dark)" srcset="assets/img/shots/autopilot-dark-628.webp 628w, assets/img/shots/autopilot-dark-500.webp 500w" sizes="(min-width: 720px) 628px, calc(100vw - 32px)"><img src="assets/img/shots/autopilot-light-500.webp" srcset="assets/img/shots/autopilot-light-628.webp 628w, assets/img/shots/autopilot-light-500.webp 500w" sizes="(min-width: 720px) 628px, calc(100vw - 32px)" width="628" height="556" alt="Налаштування автопілота: ланцюжок План → Персонажі → Кадри → Відео й озвучка → Монтаж → Обкладинка, профіль, обкладинка, повторні спроби й «Якщо частина сцен не вдалася» — «Питати мене»" loading="lazy" decoding="async"></picture>
     </figure>
   </div>
 </section>
@@ -557,7 +579,7 @@
           <li><b>Windows 10/11 (64-біт) або macOS 13 Ventura+</b><span>Mac з Apple Silicon (M1 і новіші) або з Intel.</span></li>
           <li><b>Telegram</b><span>Акаунт і підписка на канал і чат YT Cartell — <a class="prose-link" href="#access">як отримати доступ</a>.</span></li>
           <li><b>FFmpeg разом із ffprobe</b><span>Для монтажу, перегляду, мікрофона й експорту. Найпростіше — кнопка «Встановити автоматично» в самій студії. Вручну: Windows — <code>winget install Gyan.FFmpeg</code>, macOS — <code>brew install ffmpeg</code>.</span></li>
-          <li><b>Твої сервіси генерації</b><span>Текст: CarteLink, будь-який OpenAI-сумісний сервіс або Google Gemini. Кадри й відео: <a class="prose-link" href="#g-labs">G-Labs Studio</a>, Google (Gemini Omni Flash / Veo) або <a class="prose-link" href="guide/api.html">своє API</a> — OpenAI, fal.ai, Replicate, Runway, Luma, MiniMax, RoyalTechno чи будь-яке інше за описом. Озвучка: ElevenLabs, Cartesia, OpenAI, Google Cloud, Azure, MiniMax, Fish Audio або свій сервер.</span></li>
+          <li><b>Твої сервіси генерації</b><span>Текст: CarteLink, будь-який OpenAI-сумісний сервіс, Anthropic, Ollama, Azure OpenAI або Google Gemini. Кадри й відео: <a class="prose-link" href="#g-labs">G-Labs Studio</a>, Google (Gemini Omni Flash / Veo) або <a class="prose-link" href="guide/api.html">своє API</a> — OpenAI, fal.ai, Replicate, Runway, Luma, MiniMax, RoyalTechno чи будь-яке інше за описом. Озвучка: ElevenLabs, Cartesia, OpenAI, Google Cloud, Azure, MiniMax, Fish Audio, Lumean або будь-яка інша через «Власний сервер». Не знаєш, що куди, — встав усе в <a class="prose-link" href="guide/assistant.html">«Помічник підключення»</a>.</span></li>
           <li><b>Ключі — лише в тебе</b><span>Студія зберігає їх тільки на твоєму комп'ютері.</span></li>
         </ul>
       </div>
@@ -576,17 +598,17 @@
       <div class="macai-copy" data-reveal>
         <h3 class="h4">Що зробить агент</h3>
         <ul class="facts">
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Завантажить останній реліз з GitHub — zip саме під твій Mac</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Завантажить найновішу версію для Mac з GitHub — zip саме під твій Mac</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Звірить SHA-256 із SHA256SUMS.txt — підмінений файл не встановиться</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Покладе програму в «Програми» й зніме карантин</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Поставить FFmpeg через Homebrew, а whisper-cpp — якщо скажеш</li>
           <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Запустить студію й підкаже, що налаштувати далі</li>
         </ul>
-        <p class="macai-note">Паролі (пароль Mac для Homebrew) вводиш тільки ти. Якщо Mac-версії в релізі ще немає — агент зупиниться й скаже про це.</p>
+        <p class="macai-note">Паролі (пароль Mac для Homebrew) вводиш тільки ти. Якщо в найновішому релізі ще немає збірки для Mac, агент поставить попередню версію й скаже яку.</p>
 
         <h3 class="h4 macai-manual-title">Або вручну — три кроки</h3>
         <ol class="ol-steps manual-steps">
-          <li><span class="n" aria-hidden="true">1</span><div><b>Завантаж і перенеси</b><span class="d">Візьми .zip для свого Mac з <a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases/latest" rel="noopener">останнього релізу</a>, розпакуй і перетягни YT Cartell Studio у «Програми».</span></div></li>
+          <li><span class="n" aria-hidden="true">1</span><div><b>Завантаж і перенеси</b><span class="d">Візьми .zip для свого Mac кнопкою <a href="#download">«Завантажити»</a> вище або з <a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases" rel="noopener">релізів на GitHub</a>, розпакуй і перетягни YT Cartell Studio у «Програми».</span></div></li>
           <li><span class="n" aria-hidden="true">2</span><div><b>Зніми карантин</b><span class="d">У Терміналі:</span><code class="cmd">xattr -dr com.apple.quarantine "/Applications/YT Cartell Studio.app"</code></div></li>
           <li><span class="n" aria-hidden="true">3</span><div><b>Постав FFmpeg</b><span class="d">Через <a href="https://brew.sh" rel="noopener">Homebrew</a>:</span><code class="cmd">brew install ffmpeg</code></div></li>
         </ol>
@@ -612,12 +634,14 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
 
 1. Перевір систему: <code><span class="bt">`</span>sw_vers<span class="bt">`</span></code> (потрібна macOS 13 Ventura або новіша) і <code><span class="bt">`</span>uname -m<span class="bt">`</span></code>
    (arm64 = Apple Silicon, x86_64 = Intel).
-2. Дізнайся останню версію:
-   <code><span class="bt">`</span>curl -fsSL https://api.github.com/repos/gitkalenyuk/yt-cartell-studio/releases/latest<span class="bt">`</span></code>
-   Обери файл під мою архітектуру: <code><span class="bt">`</span>YT-Cartell-Studio-&lt;версія&gt;-macos-arm64.zip<span class="bt">`</span></code> (Apple Silicon)
-   або <code><span class="bt">`</span>YT-Cartell-Studio-&lt;версія&gt;-macos-x64.zip<span class="bt">`</span></code> (Intel); якщо його нема, підійде
-   <code><span class="bt">`</span>…-macos-universal.zip<span class="bt">`</span></code>. Якщо жодного zip для macOS у релізі немає — зупинись і скажи мені,
-   що Mac-версія ще не опублікована.
+2. Знайди найновішу версію для Mac:
+   <code><span class="bt">`</span>curl -fsSL "https://api.github.com/repos/gitkalenyuk/yt-cartell-studio/releases?per_page=20"<span class="bt">`</span></code>
+   Релізи йдуть від нових до старих; пропусти чернетки й попередні (draft, prerelease). Візьми
+   перший реліз, де є файл під мою архітектуру: <code><span class="bt">`</span>YT-Cartell-Studio-&lt;версія&gt;-macos-arm64.zip<span class="bt">`</span></code>
+   (Apple Silicon) або <code><span class="bt">`</span>YT-Cartell-Studio-&lt;версія&gt;-macos-x64.zip<span class="bt">`</span></code> (Intel); якщо його нема, підійде
+   <code><span class="bt">`</span>…-macos-universal.zip<span class="bt">`</span></code>. Mac-збірка інколи виходить пізніше за Windows — якщо в найновішому
+   релізі zip для macOS немає, скажи мені, яку версію ставиш замість неї. Якщо zip для macOS
+   немає в жодному релізі — зупинись і скажи, що Mac-версія ще не опублікована.
 3. Завантаж обраний zip і <code><span class="bt">`</span>SHA256SUMS.txt<span class="bt">`</span></code> з того ж релізу в <code><span class="bt">`</span>~/Downloads/yt-cartell-studio/<span class="bt">`</span></code>
    (curl -fL з адрес <code><span class="bt">`</span>browser_download_url<span class="bt">`</span></code>). Перевір контрольну суму: <code><span class="bt">`</span>shasum -a 256 &lt;zip&gt;<span class="bt">`</span></code>
    має збігтися з рядком цього файлу в <code><span class="bt">`</span>SHA256SUMS.txt<span class="bt">`</span></code>. Якщо не збігається — зупинись і
@@ -645,8 +669,9 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
    - встановити G-Labs Studio (https://duckmartians.info/g-labs/en/) для кадрів і відео,
      увімкнути в ній Webhook API (Generate → Start Server) і вписати адресу
      http://127.0.0.1:8765 та ключ у «Налаштування → Кадри й відео» студії;
-   - вписати текстовий сервіс (CarteLink або будь-який OpenAI-сумісний) і ключ озвучки
-     (наприклад ElevenLabs) у «Налаштування → Підключення»;
+   - вписати текстовий сервіс (CarteLink, будь-який OpenAI-сумісний, Anthropic, Ollama, Azure
+     чи Gemini) і ключ озвучки (наприклад ElevenLabs) у «Налаштування → Підключення» — або
+     вставити всі адреси й ключі в «Помічник підключення» там само, він розбереться сам;
    - коли вперше натисну мікрофон у «Новій історії», macOS спитає дозвіл на мікрофон — дозволити.</pre>
         </div>
         <p class="prompt-foot"><span class="copy-status" aria-live="polite"></span><a class="link" href="https://github.com/gitkalenyuk/yt-cartell-studio/blob/main/INSTALL-MAC-AI.md" rel="noopener">Та сама інструкція на GitHub<svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></p>
@@ -662,7 +687,7 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
     <div class="glabs-copy">
       <h2 class="h2" id="g-labs-title" data-reveal>G-Labs Studio: кадри й відео з твого Google Flow</h2>
       <p class="lead" data-reveal style="--rd:1">Окрема програма для Windows і macOS від duckmartians, безкоштовна для особистого використання. Це не наш продукт&nbsp;— YT Cartell Studio просто підключається до неї.</p>
-      <p class="body-2 glabs-more" data-reveal style="--rd:2">G-Labs Studio автоматизує Google Flow — картинки Nano Banana й відео Veo, а також Grok, Meta AI і ChatGPT GPT Image: кілька акаунтів Google, черги й локальний Webhook API. Студія надсилає туди запити на кадри й кліпи, тож генерація йде на кредитах твого акаунта Google — Free, Pro чи Ultra. Кліпи по 4 і 6 секунд через G-Labs знімаються лише з Ultra.</p>
+      <p class="body-2 glabs-more" data-reveal style="--rd:2">G-Labs Studio автоматизує Google Flow — картинки Nano Banana й відео Veo, а також Grok, Meta AI і ChatGPT GPT Image: кілька акаунтів Google, черги й локальний Webhook API. Студія надсилає туди запити на кадри й кліпи, тож генерація йде на кредитах твого акаунта Google — Free, Pro чи Ultra. Кліпи Veo 3.1 на 4 і 6 секунд через G-Labs — лише з Ultra; Omni Flash знімає 4–10 секунд і без неї.</p>
       <ul class="ext-links" data-reveal style="--rd:3">
         <li><a href="https://duckmartians.info/g-labs/en/" rel="noopener">Сайт G-Labs Studio<svg class="i" aria-hidden="true"><use href="#i-external"/></svg></a></li>
         <li><a href="https://duckmartians.info/g-labs/guide/en/" rel="noopener">Посібник<svg class="i" aria-hidden="true"><use href="#i-external"/></svg></a></li>
@@ -700,8 +725,8 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
     </div>
     <div data-reveal style="--rd:1">
       <details class="qa">
-        <summary>Що нового у версії 2.0.1?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-        <div class="a"><p>Голос у відео (герої говорять прямо в кадрі), фільми без людей і з моушн-графікою, «Перезняти за прикладом» із YouTube, мікрофон на Головній, Telegram-бот, експорт у редактори, будь-яке API, перенесення налаштувань одним файлом і FFmpeg одним кліком. Усе по кроках — у <a href="guide/">довіднику 2.0.1</a>.</p></div>
+        <summary>Що нового у версії 2.0.3?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+        <div class="a"><p>Невдалі сцени більше не зникають з монтажу й не підміняються мовчки кадром — студія показує точну помилку й питає, як бути. А ще «Помічник підключення» і каталоги моделей, текст через Anthropic, Ollama чи Azure OpenAI, озвучка Lumean, мультиголос і кнопки рішення в Telegram-боті. Усе по кроках — у <a href="guide/">довіднику</a>, попередні версії — в <a href="changelog/">історії версій</a>.</p></div>
       </details>
       <details class="qa">
         <summary>Чи можна керувати студією з телефона?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
@@ -725,7 +750,7 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
       </details>
       <details class="qa">
         <summary>Що, як одна сцена не вдалася?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-        <div class="a"><p>У кожної сцени свій стан. Переробиш лише її — решта лишається як є. «Повторити» на етапі доробляє тільки те, що не вийшло, а замінені версії кадрів, кліпів і голосів зберігаються в кошику проєкту.</p></div>
+        <div class="a"><p>У кожної сцени свій стан і точна помилка сервісу з підказкою. Переробиш лише її — решта лишається як є. «Повторити» на етапі доробляє тільки те, що не вийшло, а замінені версії кадрів, кліпів і голосів зберігаються в кошику проєкту.</p><p>Нічого не підставляється мовчки: якщо перед монтажем якісь сцени не готові, студія спитає — змонтувати без них, з кадром замість відео чи зупинитись. <a href="guide/failed.html">Докладніше</a>.</p></div>
       </details>
       <details class="qa">
         <summary>Де лежать мої проєкти й ключі?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
@@ -753,7 +778,7 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
       </details>
       <details class="qa">
         <summary>Студія працює на Mac?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-        <div class="a"><p>Так, є збірки для Apple Silicon та Intel. Найпростіше встановити через ШІ-агента — <a href="#mac-ai">готова інструкція</a> сама завантажить, перевірить і встановить усе потрібне.</p><p>Найбільше студію перевіряли на Windows — якщо на Mac щось поводиться дивно, напиши в <a href="https://t.me/+Jj06Fbj8-8oyZDQ6" rel="noopener">чат спільноти</a>.</p></div>
+        <div class="a"><p>Так, є збірки для Apple Silicon та Intel. Mac-збірка інколи виходить пізніше за Windows — тоді кнопка «Завантажити» дає найновішу версію для Mac. Найпростіше встановити через ШІ-агента — <a href="#mac-ai">готова інструкція</a> сама завантажить, перевірить і встановить усе потрібне.</p><p>Найбільше студію перевіряли на Windows — якщо на Mac щось поводиться дивно, напиши в <a href="https://t.me/+Jj06Fbj8-8oyZDQ6" rel="noopener">чат спільноти</a>.</p></div>
       </details>
     </div>
   </div>
@@ -785,17 +810,16 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
         <p>Студія, де історія стає відео. Для учасників спільноти YT Cartell.</p>
       </div>
       <div>
-        <h2>Довідник 2.0.1</h2>
+        <h2>Довідник</h2>
         <ul>
-          <li><a href="guide/">Що нового — усі розділи</a></li>
-          <li><a href="guide/modes.html">Голос у відео і режими</a></li>
-          <li><a href="guide/remake.html">Перезняти за прикладом</a></li>
-          <li><a href="guide/mic.html">Мікрофон</a></li>
+          <li><a href="guide/">Усі розділи</a></li>
+          <li><a href="guide/failed.html">Невдалі сцени і точні помилки</a></li>
+          <li><a href="guide/assistant.html">Помічник підключення</a></li>
+          <li><a href="guide/connect.html">Підключення будь-якого сервісу</a></li>
+          <li><a href="guide/catalogs.html">Каталоги моделей</a></li>
+          <li><a href="guide/multivoice.html">Мультиголос</a></li>
           <li><a href="guide/telegram.html">Telegram-бот</a></li>
-          <li><a href="guide/export.html">Експорт у редактори</a></li>
-          <li><a href="guide/api.html">Своє API, RoyalTechno і Google</a></li>
-          <li><a href="guide/voice.html">Озвучка й ключі</a></li>
-          <li><a href="guide/transfer.html">Перенесення налаштувань</a></li>
+          <li><a href="guide/modes.html">Голос у відео і режими</a></li>
         </ul>
       </div>
       <div>
@@ -809,9 +833,9 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
         <h2>Програма</h2>
         <ul>
           <li><a href="#download">Завантажити</a></li>
-          <li><a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases/tag/v2.0.1" rel="noopener">Що нового у версії 2.0.1</a></li>
+          <li><a href="changelog/">Історія версій</a></li>
           <li><a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases" rel="noopener">Усі версії на GitHub</a></li>
-          <li><a href="#tutorial">Відеоурок</a></li>
+          <li><a href="#tutorial">Відео</a></li>
           <li><a href="#faq">Питання</a></li>
         </ul>
       </div>

@@ -2,7 +2,7 @@
 
 Не хочеш розбиратися з Терміналом? Відкрий на Mac свого ШІ-агента, який уміє виконувати команди
 (**Claude Code**, **Codex CLI**, Cursor-агент тощо), встав увесь текст із блоку нижче й запусти.
-Агент сам завантажить останню версію з GitHub, перевірить контрольну суму, встановить програму
+Агент сам завантажить останню версію для Mac з GitHub, перевірить контрольну суму, встановить програму
 й усе потрібне для неї. Паролі (пароль Mac для Homebrew) вводиш тільки ти.
 
 ```text
@@ -14,12 +14,14 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
 
 1. Перевір систему: `sw_vers` (потрібна macOS 13 Ventura або новіша) і `uname -m`
    (arm64 = Apple Silicon, x86_64 = Intel).
-2. Дізнайся останню версію:
-   `curl -fsSL https://api.github.com/repos/gitkalenyuk/yt-cartell-studio/releases/latest`
-   Обери файл під мою архітектуру: `YT-Cartell-Studio-<версія>-macos-arm64.zip` (Apple Silicon)
-   або `YT-Cartell-Studio-<версія>-macos-x64.zip` (Intel); якщо його нема, підійде
-   `…-macos-universal.zip`. Якщо жодного zip для macOS у релізі немає — зупинись і скажи мені,
-   що Mac-версія ще не опублікована.
+2. Знайди найновішу версію для Mac:
+   `curl -fsSL "https://api.github.com/repos/gitkalenyuk/yt-cartell-studio/releases?per_page=20"`
+   Релізи йдуть від нових до старих; пропусти чернетки й попередні (draft, prerelease). Візьми
+   перший реліз, де є файл під мою архітектуру: `YT-Cartell-Studio-<версія>-macos-arm64.zip`
+   (Apple Silicon) або `YT-Cartell-Studio-<версія>-macos-x64.zip` (Intel); якщо його нема, підійде
+   `…-macos-universal.zip`. Mac-збірка інколи виходить пізніше за Windows — якщо в найновішому
+   релізі zip для macOS немає, скажи мені, яку версію ставиш замість неї. Якщо zip для macOS
+   немає в жодному релізі — зупинись і скажи, що Mac-версія ще не опублікована.
 3. Завантаж обраний zip і `SHA256SUMS.txt` з того ж релізу в `~/Downloads/yt-cartell-studio/`
    (curl -fL з адрес `browser_download_url`). Перевір контрольну суму: `shasum -a 256 <zip>`
    має збігтися з рядком цього файлу в `SHA256SUMS.txt`. Якщо не збігається — зупинись і
@@ -47,14 +49,15 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
    - встановити G-Labs Studio (https://duckmartians.info/g-labs/en/) для кадрів і відео,
      увімкнути в ній Webhook API (Generate → Start Server) і вписати адресу
      http://127.0.0.1:8765 та ключ у «Налаштування → Кадри й відео» студії;
-   - вписати текстовий сервіс (CarteLink або будь-який OpenAI-сумісний) і ключ озвучки
-     (наприклад ElevenLabs) у «Налаштування → Підключення»;
+   - вписати текстовий сервіс (CarteLink, будь-який OpenAI-сумісний, Anthropic, Ollama, Azure
+     чи Gemini) і ключ озвучки (наприклад ElevenLabs) у «Налаштування → Підключення» — або
+     вставити всі адреси й ключі в «Помічник підключення» там само, він розбереться сам;
    - коли вперше натисну мікрофон у «Новій історії», macOS спитає дозвіл на мікрофон — дозволити.
 ```
 
 ## Що робить агент (коротко)
 
-1. Бере останній реліз з [Releases](https://github.com/gitkalenyuk/yt-cartell-studio/releases/latest) і zip під твій Mac.
+1. Бере найновіший реліз з [Releases](https://github.com/gitkalenyuk/yt-cartell-studio/releases), у якому є zip під твій Mac.
 2. Звіряє SHA-256 з `SHA256SUMS.txt` — підмінений файл не встановиться.
 3. Кладе «YT Cartell Studio.app» у Програми й знімає карантин (застосунок без підпису Apple).
 4. Ставить FFmpeg (і, якщо скажеш, whisper.cpp) через Homebrew.
@@ -62,4 +65,4 @@ https://brew.sh та формули Homebrew. Паролі вводжу я са�
 
 Оновлення потім приходять прямо в програмі: кнопка **«Оновлення»** в меню зліва.
 
-Що вміє нова версія і як цим користуватися — у [довіднику 2.0.1](https://gitkalenyuk.github.io/yt-cartell-studio/guide/).
+Що вміє нова версія і як цим користуватися — у [довіднику](https://gitkalenyuk.github.io/yt-cartell-studio/guide/).

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Telegram-бот: керування студією з телефона — YT Cartell Studio 2.0.1</title>
-<meta name="description" content="Як підключити Telegram-бота до YT Cartell Studio: @BotFather, одноразовий код, меню, живий прогрес, відео в чат і ліміт 50 МБ, група й безпека.">
+<title>Telegram-бот: керування студією з телефона — YT Cartell Studio 2.0.3</title>
+<meta name="description" content="Як підключити Telegram-бота до YT Cartell Studio: @BotFather, одноразовий код, меню, живий прогрес, рішення для невдалих сцен, відео в чат і ліміт 50 МБ, група й безпека.">
 <link rel="canonical" href="https://gitkalenyuk.github.io/yt-cartell-studio/guide/telegram.html">
 <meta name="theme-color" content="#FFF4E6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1B1714" media="(prefers-color-scheme: dark)">
@@ -13,8 +13,8 @@
 <meta property="og:site_name" content="YT Cartell Studio">
 <meta property="og:locale" content="uk_UA">
 <meta property="og:url" content="https://gitkalenyuk.github.io/yt-cartell-studio/guide/telegram.html">
-<meta property="og:title" content="Telegram-бот: керування студією з телефона — YT Cartell Studio 2.0.1">
-<meta property="og:description" content="Як підключити Telegram-бота до YT Cartell Studio: @BotFather, одноразовий код, меню, живий прогрес, відео в чат і ліміт 50 МБ, група й безпека.">
+<meta property="og:title" content="Telegram-бот: керування студією з телефона — YT Cartell Studio 2.0.3">
+<meta property="og:description" content="Як підключити Telegram-бота до YT Cartell Studio: @BotFather, одноразовий код, меню, живий прогрес, рішення для невдалих сцен, відео в чат і ліміт 50 МБ, група й безпека.">
 <meta property="og:image" content="https://gitkalenyuk.github.io/yt-cartell-studio/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
@@ -61,7 +61,7 @@
       <span>YT Cartell Studio</span>
     </a>
     <nav class="nav" aria-label="Розділи">
-      <ul><li><a href="../#new">Нове в 2.0.1</a></li><li><a href="./" aria-current="page">Довідник</a></li><li><a href="../#how">Як це працює</a></li><li><a href="../#access">Доступ</a></li><li><a href="../#faq">Питання</a></li></ul>
+      <ul><li><a href="../#new">Що нового</a></li><li><a href="./" aria-current="page">Довідник</a></li><li><a href="../changelog/">Історія версій</a></li><li><a href="../#how">Як це працює</a></li><li><a href="../#faq">Питання</a></li></ul>
     </nav>
     <div class="header-actions">
       <button class="icon-btn theme-toggle" type="button" aria-label="Увімкнути темну тему" title="Тема">
@@ -82,29 +82,31 @@
     <nav class="crumbs" aria-label="Шлях"><a href="./">Довідник</a><svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg><span aria-current="page">Telegram-бот</span></nav>
     <h1>Telegram-бот: студія в телефоні</h1>
     <p class="lead">Твій власний бот: новий проєкт текстом чи голосовим, «За прикладом», проєкти, черга, прогрес наживо й готове відео прямо в чат. Бот працює, поки студія відкрита на комп'ютері.</p>
-    <div class="g-meta"><span class="pill pill-new"><svg class="i" aria-hidden="true"><use href="#i-sparkles"/></svg>Нове в 2.0.1</span><span class="pill"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>≈ 7 хв читання</span></div>
+    <div class="g-meta"><span class="pill pill-new"><svg class="i" aria-hidden="true"><use href="#i-sparkles"/></svg>Нове в 2.0.1</span><span class="pill pill-new"><svg class="i" aria-hidden="true"><use href="#i-sparkles"/></svg>Оновлено в 2.0.3</span><span class="pill"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>≈ 7 хв читання</span></div>
   </div>
   <div class="g-layout">
     <aside class="g-toc" aria-label="Зміст сторінки">
       <h2>На цій сторінці</h2>
-      <ol><li><a href="#setup">Підключення</a></li><li><a href="#menu">Що вміє бот</a></li><li><a href="#new">Новий проєкт із телефона</a></li><li><a href="#progress">Живий прогрес</a></li><li><a href="#video">Відео в чат і 50 МБ</a></li><li><a href="#group">Бот у групі</a></li><li><a href="#notify">Сповіщення</a></li><li><a href="#security">Безпека</a></li><li><a href="#limits">Обмеження</a></li><li><a href="#faq">Питання</a></li></ol>
-      <div class="g-toc-more"><h2>Інші розділи</h2><ol><li><a href="modes.html">Голос у відео і режими</a></li><li><a href="remake.html">Перезняти за прикладом</a></li><li><a href="mic.html">Мікрофон</a></li><li><a href="export.html">Експорт у редактори</a></li><li><a href="api.html">Своє API, RoyalTechno і Google</a></li><li><a href="voice.html">Озвучка й ключі</a></li><li><a href="transfer.html">Перенесення налаштувань</a></li></ol></div>
+      <ol><li><a href="#setup">Підключення</a></li><li><a href="#menu">Що вміє бот</a></li><li><a href="#new">Новий проєкт із телефона</a></li><li><a href="#progress">Живий прогрес</a></li><li><a href="#failed">Невдалі сцени</a></li><li><a href="#video">Відео в чат і 50 МБ</a></li><li><a href="#group">Бот у групі</a></li><li><a href="#notify">Сповіщення</a></li><li><a href="#security">Безпека</a></li><li><a href="#limits">Обмеження</a></li><li><a href="#faq">Питання</a></li></ol>
+      <div class="g-toc-more"><h2>Інші розділи</h2><ol><li><a href="failed.html">Невдалі сцени і точні помилки</a></li><li><a href="assistant.html">Помічник підключення</a></li><li><a href="connect.html">Підключення будь-якого сервісу</a></li><li><a href="catalogs.html">Каталоги моделей</a></li><li><a href="multivoice.html">Мультиголос</a></li><li><a href="modes.html">Голос у відео і режими</a></li><li><a href="remake.html">Перезняти за прикладом</a></li><li><a href="mic.html">Мікрофон</a></li><li><a href="export.html">Експорт у редактори</a></li><li><a href="api.html">Своє API, RoyalTechno і Google</a></li><li><a href="voice.html">Озвучка й ключі</a></li><li><a href="transfer.html">Перенесення налаштувань</a></li></ol></div>
     </aside>
     <article class="g-article">
-      <details class="g-toc-m"><summary>Зміст сторінки<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><ol><li><a href="#setup">Підключення</a></li><li><a href="#menu">Що вміє бот</a></li><li><a href="#new">Новий проєкт із телефона</a></li><li><a href="#progress">Живий прогрес</a></li><li><a href="#video">Відео в чат і 50 МБ</a></li><li><a href="#group">Бот у групі</a></li><li><a href="#notify">Сповіщення</a></li><li><a href="#security">Безпека</a></li><li><a href="#limits">Обмеження</a></li><li><a href="#faq">Питання</a></li></ol></details>
+      <details class="g-toc-m"><summary>Зміст сторінки<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><ol><li><a href="#setup">Підключення</a></li><li><a href="#menu">Що вміє бот</a></li><li><a href="#new">Новий проєкт із телефона</a></li><li><a href="#progress">Живий прогрес</a></li><li><a href="#failed">Невдалі сцени</a></li><li><a href="#failed">Невдалі сцени</a></li><li><a href="#video">Відео в чат і 50 МБ</a></li><li><a href="#group">Бот у групі</a></li><li><a href="#notify">Сповіщення</a></li><li><a href="#security">Безпека</a></li><li><a href="#limits">Обмеження</a></li><li><a href="#faq">Питання</a></li></ol></details>
 <section aria-labelledby="setup"><h2 id="setup">Підключення за 5 хвилин</h2>
 <ol class="g-steps"><li><div><b>Створи бота.</b> У Telegram відкрий <b>@BotFather</b> → <code>/newbot</code> → ім'я й username → скопіюй токен.</div></li><li><div><b>Встав токен.</b> Студія: Налаштування → «Сповіщення» → картка «Telegram-бот» → «Токен бота» → Enter.</div></li><li><div><b>Отримай код.</b> Блок «Керування через бота» → увімкни «Керувати студією з Telegram». З'явиться «Одноразовий код» — 6 цифр, діє 10 хвилин, лише раз.</div></li><li><div><b>Надішли код боту.</b> «Відкрити @твій_бот» → у Telegram «Почати» — код піде сам. Або «Скопіювати команду» й надішли <code>/start 482913</code>.</div></li><li><div><b>Готово.</b> Бот відповість «✅ Керування підключено…», у студії — «Працює» і «Слухається: твоє ім'я». ID чату підставиться сам.</div></li></ol>
 <div class="g-duo"><figure class="g-fig g-shot" style="--w:628px"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="../assets/img/guide/tg-token-dark-628.webp 628w" sizes="(min-width: 1100px) 380px, (min-width: 720px) 46vw, calc(100vw - 40px)"><img src="../assets/img/guide/tg-token-light-628.webp" srcset="../assets/img/guide/tg-token-light-628.webp 628w" sizes="(min-width: 1100px) 380px, (min-width: 720px) 46vw, calc(100vw - 40px)" width="628" height="730" alt="Картка «Telegram-бот»: токен бота, ID чату, «Надіслати тест» і сповіщення" loading="lazy" decoding="async"></picture><figcaption>Токен, чат і сповіщення.</figcaption></figure><figure class="g-fig g-shot" style="--w:604px"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="../assets/img/guide/tg-pairing-dark-604.webp 604w" sizes="(min-width: 1100px) 380px, (min-width: 720px) 46vw, calc(100vw - 40px)"><img src="../assets/img/guide/tg-pairing-light-604.webp" srcset="../assets/img/guide/tg-pairing-light-604.webp 604w" sizes="(min-width: 1100px) 380px, (min-width: 720px) 46vw, calc(100vw - 40px)" width="604" height="436" alt="Блок «Керування через бота»: одноразовий код 482 913, «Відкрити бота» й «Скопіювати команду»" loading="lazy" decoding="async"></picture><figcaption>Одноразовий код для підключення.</figcaption></figure></div>
 <div class="callout"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><div><p>П'ять неправильних спроб — код скасовується. Натисни «Підключити заново», щоб отримати новий.</p></div></div></section>
 <section aria-labelledby="menu"><h2 id="menu">Що вміє бот</h2>
 <p>Кнопки внизу чату: «🎬 Новий проєкт», «🔁 За прикладом», «📁 Проєкти», «⏳ Черга», «⚙️ Профілі», «📊 Статус». Команди: <code>/menu</code>, <code>/new</code>, <code>/remake</code>, <code>/projects</code>, <code>/queue</code>, <code>/status</code>, <code>/cancel</code>, <code>/help</code>.</p>
-<ul class="g-list"><li><b>Проєкти</b> — по 6 на сторінці. Картка: крок, прогрес, наступна дія, «🚀 Автопілот», «⏹ Зупинити», «🔁 Повторити невдалі», «🖼 Кадри», «🎙 Озвучка», «✂️ Монтаж», «⬇️ Надіслати відео», «📄 .srt», «🖼 Обкладинка», «🗑 Видалити».</li><li><b>Черга</b> — що генерується, з кнопками зупинки, «⏹ Зупинити все» і нещодавні помилки з «🔁».</li><li><b>Профілі</b> — профіль за замовчуванням для автопілота й нових проєктів.</li><li><b>Статус</b> — перевірка всіх сервісів, ключі озвучки, вільне місце на диску, версія.</li></ul>
+<ul class="g-list"><li><b>Проєкти</b> — по 6 на сторінці. Картка: крок, прогрес, наступна дія, «🚀 Автопілот», «⏹ Зупинити», «🔁 Повторити невдалі» (коли автопілот чекає на рішення — «🔁 Перезняти невдалі»), «🖼 Кадри», «🎙 Озвучка», «✂️ Монтаж», «⬇️ Надіслати відео», «📄 .srt», «🖼 Обкладинка», «🗑 Видалити».</li><li><b>Черга</b> — що генерується, з кнопками зупинки, «⏹ Зупинити все» і нещодавні помилки з «🔁».</li><li><b>Профілі</b> — профіль за замовчуванням для автопілота й нових проєктів.</li><li><b>Статус</b> — перевірка всіх сервісів, ключі озвучки, вільне місце на диску, версія.</li></ul>
 <figure class="g-fig g-shot" style="--w:606px"><picture><source data-dark media="(prefers-color-scheme: dark)" srcset="../assets/img/guide/tg-help-dark-606.webp 606w" sizes="(min-width: 860px) 606px, calc(100vw - 40px)"><img src="../assets/img/guide/tg-help-light-606.webp" srcset="../assets/img/guide/tg-help-light-606.webp 606w" sizes="(min-width: 860px) 606px, calc(100vw - 40px)" width="606" height="532" alt="Підказка в студії: як підключити за хвилину і що вміє бот" loading="lazy" decoding="async"></picture><figcaption>Ця ж підказка є в самій студії.</figcaption></figure></section>
 <section aria-labelledby="new"><h2 id="new">Новий проєкт із телефона</h2>
 <ol class="g-steps"><li><div>«🎬 Новий проєкт» — і надішли історію: текстом, файлом <code>.txt</code> (до 1 МБ) або голосовим (до 20 МБ). Голосове бот розпізнає сервісом із «Розпізнавання мови» студії й покаже текст на підтвердження.</div></li><li><div>У відповідь — одне повідомлення з налаштуваннями: «👤 Профіль», «🔀 Режим» (Автопілот або Покроково), тривалість (30 с, 1, 3, 5 хв або своя — від 10 с до 60 хв), «🌐 Мова», «🎙 Звук», «🎞 Що в кадрі», формат 16:9 / 9:16.</div></li><li><div>«▶️ Запустити». З автопілотом це ж повідомлення стане живим прогресом.</div></li></ol>
 <p class="muted">Надіслав просто текст без команди — бот спитає, чи зробити з нього відео.</p></section>
 <section aria-labelledby="progress"><h2 id="progress">Живий прогрес</h2>
 <ul class="g-list"><li>Одне тихе повідомлення на роботу: етап, смужка, відсоток і час, кнопки «⏹ Зупинити» й «📂 Проєкт». Оновлюється приблизно кожні 3 секунди.</li><li>Запущене з бота — одразу. Запущене на комп'ютері — через 20 секунд, якщо увімкнено «Живий прогрес у чаті».</li><li>Наприкінці повідомлення стає результатом: «✅» з «⬇️ Надіслати відео», «⚠️» з «🔁 Повторити» або «⏹ … зупинено» з «🔁 Продовжити».</li></ul></section>
+<section aria-labelledby="failed"><h2 id="failed">Невдалі сцени: рішення з телефона</h2>
+<p>Якщо перед монтажем не всі сцени готові, бот не монтує мовчки, а питає. Заголовок — «⏸ Назва — автопілот зупинився перед монтажем» або, якщо монтаж запускали з бота, «✂️ Назва — монтаж чекає на твоє рішення». Далі «Не готово сцен: N з M», помилка кожної сцени з підказкою 💡 і «Як монтувати?» з поясненням кнопок.</p><div class="g-table-wrap" tabindex="0" role="region" aria-label="Таблиця"><table class="g-table"><thead><tr><th scope="col">Кнопка</th><th scope="col">Що буде</th></tr></thead><tbody><tr><td>«🎬 Змонтувати без них»</td><td>Фільм без невдалих сцен і їхнього голосу.</td></tr><tr><td>«🖼 З кадром замість відео»</td><td>Сцени без кліпу — кадром із рухом.</td></tr><tr><td>«🔁 Перезняти невдалі»</td><td>Студія знову знімає те, що не вийшло.</td></tr><tr><td>«⏹ Зупинитись»</td><td>Нічого не монтувати.</td></tr><tr><td>«📂 Проєкт»</td><td>Картка проєкту в боті.</td></tr></tbody></table></div><p>Коли автопілот чекає на рішення, у картці проєкту замість «✂️ Монтаж» — «✂️ Обрати, як змонтувати». Сповіщення про помилку містить «❌ Не вдалося:» з рядками на кшталт «Сцена 3 · кліп: …», а підпис до готового фільму — «⚠️ Не всі сцени як у плані:», якщо якихось бракує. Що означає кожен варіант — у розділі <a href="failed.html">Невдалі сцени і точні помилки</a>.</p></section>
 <section aria-labelledby="video"><h2 id="video">Відео в чат і ліміт 50 МБ</h2>
 <p>Під повідомленням «🎬 Відео готове» — «⬇️ Надіслати відео сюди», «📄 Субтитри .srt», «🖼 Обкладинка в повній якості». Відео приходить з обкладинкою й дивиться прямо в Telegram.</p>
 <div class="callout warn"><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><div><p>Telegram приймає від ботів файли <b>до 50 МБ</b>. Якщо фільм більший, бот запропонує варіанти.</p></div></div>
@@ -134,16 +136,16 @@
         <p>Студія, де історія стає відео. Для учасників спільноти YT Cartell.</p>
       </div>
       <div>
-        <h2>Довідник 2.0.1</h2>
-        <ul><li><a href="./">Що нового — усі розділи</a></li><li><a href="modes.html">Голос у відео і режими</a></li><li><a href="remake.html">Перезняти за прикладом</a></li><li><a href="mic.html">Мікрофон</a></li><li><a href="telegram.html">Telegram-бот</a></li><li><a href="export.html">Експорт у редактори</a></li><li><a href="api.html">Своє API, RoyalTechno і Google</a></li><li><a href="voice.html">Озвучка й ключі</a></li><li><a href="transfer.html">Перенесення налаштувань</a></li></ul>
+        <h2>Довідник</h2>
+        <ul><li><a href="./">Усі розділи</a></li><li><a href="./failed.html">Невдалі сцени і точні помилки</a></li><li><a href="./assistant.html">Помічник підключення</a></li><li><a href="./connect.html">Підключення будь-якого сервісу</a></li><li><a href="./catalogs.html">Каталоги моделей</a></li><li><a href="./multivoice.html">Мультиголос</a></li><li><a href="./telegram.html">Telegram-бот</a></li><li><a href="./modes.html">Голос у відео і режими</a></li></ul>
       </div>
       <div>
         <h2>Програма</h2>
         <ul>
           <li><a href="../#download">Завантажити</a></li>
-          <li><a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases/tag/v2.0.1" rel="noopener">Що нового у версії 2.0.1</a></li>
+          <li><a href="../changelog/">Історія версій</a></li>
           <li><a href="https://github.com/gitkalenyuk/yt-cartell-studio/releases" rel="noopener">Усі версії на GitHub</a></li>
-          <li><a href="../#tutorial">Відеоурок</a></li>
+          <li><a href="../#tutorial">Відео</a></li>
           <li><a href="../#faq">Питання</a></li>
         </ul>
       </div>

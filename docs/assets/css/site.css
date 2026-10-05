@@ -357,39 +357,31 @@ code, .kbd { font-family: inherit; font-weight: 500; background: var(--surface);
 .js .step-panel.is-entering .window { animation-duration: .42s; }
 @keyframes stepIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-/* ---------- tutorial video */
+/* ---------- videos (#videos): the newest one is large, the rest are cards */
 .video-card {
   position: relative; aspect-ratio: 16 / 9; width: 100%;
   border-radius: var(--r-card); overflow: hidden;
-  background: var(--card); box-shadow: var(--sh-card);
+  background: #000; box-shadow: var(--sh-card);
   outline: 1px solid color-mix(in srgb, var(--border) 75%, transparent); outline-offset: -1px;
 }
 .video-card video { width: 100%; height: 100%; object-fit: contain; background: #000; }
-.video-empty {
-  position: absolute; inset: 14px; border-radius: var(--r-inner);
-  background: var(--surface);
-  display: grid; place-items: center; text-align: center; padding: 24px;
+.vid-list { display: grid; gap: clamp(32px, 1.5rem + 1.5vw, 48px) 24px; }
+@media (min-width: 700px) { .vid-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.vid { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.vid[hidden] { display: none; }
+.vid .video-card { order: -1; border-radius: var(--r-inner); }
+.vid-copy { display: grid; gap: 8px; justify-items: start; min-width: 0; }
+.vid-copy .h3 { font-size: 1.1875rem; line-height: 1.3; text-wrap: balance; }
+.vid-copy p { color: var(--text-2); font-size: .9688rem; line-height: 1.5; max-width: 58ch; }
+.vid-meta { color: var(--text-3); font-size: .875rem; }
+.vid.is-lead { grid-column: 1 / -1; gap: 24px; }
+.vid.is-lead .video-card { order: 2; border-radius: var(--r-card); }
+.vid.is-lead .vid-copy { gap: 12px; }
+.vid.is-lead .vid-copy .h3 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); line-height: 1.15; }
+.vid.is-lead .vid-copy p { font-size: clamp(1.0625rem, 1rem + .3vw, 1.25rem); line-height: 1.55; }
+@media (min-width: 1024px) {
+  .vid.is-lead { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 56px; align-items: center; }
 }
-.video-empty-inner { display: grid; justify-items: center; gap: 10px; max-width: 460px; }
-.empty-ring { width: 96px; height: 96px; border-radius: 99px; background: color-mix(in srgb, var(--action-soft) 55%, transparent); display: grid; place-items: center; margin-bottom: 10px; }
-.empty-ring span { width: 68px; height: 68px; border-radius: 99px; background: var(--action-soft); display: grid; place-items: center; color: var(--action-text); }
-.empty-ring .i { width: 30px; height: 30px; margin-left: 3px; }
-.video-empty .h3 { font-size: clamp(1.25rem, 1.1rem + .6vw, 1.625rem); }
-.video-empty p { color: var(--text-2); }
-.video-empty .link { margin-top: 6px; }
-@media (max-width: 599px) {
-  .video-card { aspect-ratio: auto; }
-  .video-card.has-video { aspect-ratio: 16 / 9; }
-  .video-empty { position: relative; inset: auto; margin: 10px; padding: 36px 20px; }
-  .empty-ring { width: 76px; height: 76px; }
-  .empty-ring span { width: 54px; height: 54px; }
-  .empty-ring .i { width: 24px; height: 24px; }
-}
-.video-wrap { display: grid; gap: 32px; }
-@media (min-width: 1024px) { .video-wrap { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 56px; align-items: center; } }
-.video-copy { max-width: 480px; }
-.video-copy .lead { margin-top: 18px; }
-.video-copy .facts { margin-top: 24px; }
 
 /* ---------- feature split */
 .feature { display: grid; gap: 36px; align-items: center; }

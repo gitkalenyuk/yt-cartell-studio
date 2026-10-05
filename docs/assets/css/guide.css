@@ -1,4 +1,4 @@
-/* YT Cartell Studio — guide pages and the «Нове в 2.0.1» cards. Uses the tokens of site.css. */
+/* YT Cartell Studio — guide pages, the changelog and the «Що нового» cards. Uses the tokens of site.css. */
 
 /* ---------- small pills */
 .pill {
@@ -37,6 +37,15 @@
   .new-grid > * { grid-column: span 4; }
   .new-grid > .new-card-lg { grid-column: span 6; }
 }
+/* two columns and an odd number of cards: the last one lies across both, picture beside the text */
+@media (min-width: 700px) and (max-width: 1099px) {
+  .new-grid > .new-card:last-child:nth-child(odd) { grid-column: 1 / -1; flex-direction: row; }
+  .new-grid > .new-card:last-child:nth-child(odd) .new-media { flex: 0 0 50%; border-bottom: 0; border-right: 1px solid var(--border); }
+}
+@media (min-width: 700px) {
+  .gi-grid > .new-card:last-child:nth-child(odd) { grid-column: 1 / -1; flex-direction: row; }
+  .gi-grid > .new-card:last-child:nth-child(odd) .new-media { flex: 0 0 50%; border-bottom: 0; border-right: 1px solid var(--border); }
+}
 .new-card {
   position: relative; display: flex; flex-direction: column; min-width: 0;
   background: var(--card); border-radius: var(--r-card); overflow: hidden;
@@ -63,9 +72,19 @@
 .also > b { font-weight: 600; margin-right: 6px; }
 .also .pill { background: var(--card); outline: 1px solid var(--border); outline-offset: -1px; color: var(--text); height: 34px; padding: 0 14px; }
 
-/* the release promo (shown by site.js only when docs/media/promo-2.0.1.mp4 exists) */
-.promo { margin-bottom: clamp(28px, 1.5rem + 1.5vw, 48px); }
-.promo .video-card { max-width: 1040px; margin-inline: auto; background: #000; }
+/* «Що нового»: the earlier versions under the newest one, and the changelog page */
+.also + .rel-prev, .new-grid + .rel-prev { margin-top: clamp(36px, 1.75rem + 1.5vw, 56px); }
+.rel-prev-title { margin: 0; font-size: .8125rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-3); margin-bottom: 14px; }
+.rel-grid { display: grid; gap: 16px; }
+@media (min-width: 900px) { .rel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.rel-item { background: var(--card); border-radius: var(--r-inner); box-shadow: var(--sh-control); outline: 1px solid color-mix(in srgb, var(--border) 75%, transparent); outline-offset: -1px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+.rel-item h3, .rel-item h4 { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-size: 1.125rem; line-height: 1.3; font-weight: 600; }
+.rel-item time { color: var(--text-3); font-size: .875rem; font-weight: 400; }
+.rel-item p { color: var(--text-2); font-size: .9688rem; line-height: 1.5; }
+.rel-item .link { margin-top: auto; padding-top: 4px; }
+.rel-foot { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.mac-note { margin-top: 14px; color: var(--text-2); font-size: .9375rem; line-height: 1.5; max-width: 58ch; }
+.mac-note[hidden] { display: none; }
 
 /* ---------- guide pages */
 .g-hero { padding-top: clamp(28px, 1.25rem + 2vw, 56px); padding-bottom: clamp(20px, 1rem + 1vw, 36px); }
